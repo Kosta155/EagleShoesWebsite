@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html xmnls:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" th:href="@{/css/index.css}">
+<link rel="stylesheet" th:href="@{/css/general.css}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
+</head>
+<body>
+	
+	<div class="main-container">
+		<header th:include="~{fragments/general.html :: header}">
+		</header>
+		<section class="section section1">
+			<div class="section1-button">
+				<h2>LATEST WEEKLY SALES</h2>
+				<a>
+					<button>Shop Men <span style='font-size:27px;'>&#10230</span></button>
+				</a>
+				<a>
+					<button>Shop Women <span style='font-size:27px;'>&#10230</span></button>
+				</a>
+				<a>
+					<button>Shop Kids <span style='font-size:27px;'>&#10230</span></button>
+				</a>
+			</div>
+			<div class="section1-discount">
+				<img th:src="@{https://static.vecteezy.com/system/resources/previews/024/800/859/original/fifty-percent-offer-badge-super-sale-discount-coupon-black-sales-badge-discount-sticker-design-big-sale-coupon-illustration-free-png.png}" style="width:350px;">
+			</div>
+		</section>
+		
+		<section class="section section2">
+			<div class="section2-sport">
+				<div class="header-section2">
+					<h1>WHERE PASSION MEETS PLAY</h1>
+					<p>DIVE INTO THE WORLD OF SPORTS</p>
+				</div>
+				
+				<div class="type-sport">
+					<div class="type-sport-items">
+						<img th:src="@{https://cdn.shopify.com/s/files/1/0525/8995/3187/files/ASICS-2_d26ababf-1e2a-41e3-b5a8-209be5db6842_800x.jpg?v=1649070521}" style="width:100%; height:100%;">
+						<h3>RUNNING</h3>
+					</div>
+					<div class="type-sport-items">
+						<img th:src="@{https://img.kwcdn.com/product/Fancyalgo/VirtualModelMatting/79c6547e455cbb6f861e43f94627f6a8.jpg?imageMogr2/auto-orient%7CimageView2/2/w/800/q/70/format/webp}" style="width:100%; height:100%;">
+						<h3>BASKETBALL</h3>
+					</div>
+					<div class="type-sport-items">
+						<img th:src="@{https://pyxis.nymag.com/v1/imgs/3c4/8df/4777a6ae92616ed9ec2c7788caf1d62155-womens-tennis-shoe-025-final.jpg}" style="width:100%; height:100%;">
+						<h3>TENNIS</h3>
+					</div>
+					<div class="type-sport-items">
+						<img th:src="@{https://i5.walmartimages.com/asr/d083f4b6-61f2-487f-99c4-56610f14ab9a.e4247db0b711814b202d87214689fea7.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF}" style="width:100%; height:100%;">
+						<h3>SOCCER</h3>
+					</div>
+				</div>
+			</div>
+			<div class="section2-coporate" style="background-color: bisque;">
+				<div class="header-section2">
+					<h1> Premium-Grade Footwears Crafted For Corporate Environments</h1>
+					<p>WALK CONFIDENTLY</p>
+					
+				<div class="type-sport cooporate" >
+					<div class="type-sport-items">
+						<img th:src="@{https://i.pinimg.com/564x/9b/75/9d/9b759d87e077ada61fb01401e93f5b4b.jpg}" width="100%" height="100%">
+						<h3>CLASSIC MEN</h3>
+					</div>
+					<div class="type-sport-items cooporate">
+						<img th:src="@{https://www.dhresource.com/0x0/f2/albu/g20/M00/56/75/rBNaOGEnPxuAaaizAAJhtiw-PV0362.jpg}" style="width:100%; height:100%;">
+						<h3>CLASSIC WOMEN</h3>
+					</div>
+					<div class="type-sport-items">
+						<img th:src="@{https://media.karousell.com/media/photos/products/2023/4/11/kids_shoes_boy_baby_toddler_le_1681228289_17e09fe7_progressive.jpg}" style="width:100%; height:100%;">
+						<h3>CLASSIC KIDS</h3>
+					</div>
+					</div>
+				</div>
+				
+				<div class="section2-featuredKicks">
+					<h1>ALL FEATURED SHOES</h1>
+					<div class="container-featured-shoes">
+						
+						
+						<div th:each="shoe : ${shoes}" class="container-featured-shoes-items">
+                        <img th:src="${shoe.pictureURL}" width="100%" height="100%">
+                         <i class="fa fa-heart favourite" style='font-size:35px;'></i>
+                         <p class="price" th:text="${'C$ ' + shoe.price}"></p>
+                         <img class="heart">
+                         <div class="shoe-desc">
+							 <h6 class="name" th:text="${shoe.shoeName}"></h6>
+	                         <p class="describe">Men's Shoe</p>
+	                         <p class="describe">3 Colors</p>
+						 </div>
+                      </div>
+                      
+						
+					</div>
+				</div>
+			</div>
+		</section>
+		
+		
+		<section class="section section3">
+			<div class="section3-items section3-item1">
+				<img th:src="@{https://img.buzzfeed.com/buzzfeed-static/static/2023-10/10/16/asset/f29918dace8e/sub-buzz-5423-1696953653-1.jpg}"  width="100%" height="100%">
+				<h1>EXCLUSIVE DEALS</h1>
+				<a>
+					<button>Shop Exclusively<span style='font-size:27px;'>&#10230</span></button>
+				</a>
+			</div>
+			<div class="section3-items section3-item2">
+					<img th:src="@{https://qph.cf2.quoracdn.net/main-qimg-4f649f9612abc3f91e58530afe8d9237}"  width="100%" height="100%">
+				
+				<h1>LATEST & NEW ARRIVALS</h1>
+				<a>
+					<button>Shop Latest<span style='font-size:27px;'>&#10230</span></button>
+				</a>
+			</div>
+		</section>
+		
+		<section  class="section section4">
+			<h1>BECOME A MEMBER & GET 30% OFF</h1>
+			<a><button>SIGN UP FOR FREE  <span style='font-size:27px;'>&#10230</span></button></a>
+		</section>
+		<footer th:include="fragments/general.html :: footer"></footer>	
+	</div>
+	<script th:src="@{/Script/dropdown.js}"></script>
+	<script th:src="@{/Script/favourite.js}"></script>
+    <input type="hidden" th:value="${username}" id="username">
+	
+	
+</body>
+</html>

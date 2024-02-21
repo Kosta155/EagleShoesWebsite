@@ -1,0 +1,221 @@
+@charset "ISO-8859-1";
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.text{
+	width:200px;
+	 border:1px solid white;
+	 border-radius: 10px;
+	 background: black;
+	 color:white;
+	 display: flex;
+	 justify-content: center;
+ }
+ 
+ #search{
+	 margin:3px;
+ }
+
+header{
+	display:grid;
+	grid-template-rows: 30% 70%;
+	height:130px;
+	background-color: black;
+	color:white;
+	width:100%;
+	 position: relative;
+	
+}
+.headerItem1{
+	display:grid;
+	justify-content: center;
+	padding-top: 10px;
+	background-color: #848484;
+	grid-template-columns: auto auto;
+}
+
+.headerItem2{
+	display:grid;
+	grid-template-columns: 25% 40% 35%;
+}
+.headerGrandItem0
+{
+	 display:flex;
+	 justify-content: space-evenly;
+	 
+	 align-items: center;
+}
+.headerGrandItem1{
+	 display:grid;
+	justify-content: center;
+	 grid-template-columns: 14% repeat(5,12%) ;
+	 align-items: center;
+	 padding:10px;
+	 margin-left:25%;
+	
+ }
+
+ .headerGrandItem1 h6{
+	 font-size:17px;
+	  
+	  height:70px;
+	  text-align: center;
+	  padding-top:20px;
+	  align-self: center;
+	   
+	 
+ }
+ .headerGrandItem1 h6:hover{
+	 border-bottom:2px solid white;
+ }
+ 
+
+
+ .headerGrandItem2{
+	 display:grid;
+   justify-content: end;
+	grid-template-columns:210px repeat(3,60px);
+	 align-items: center;
+	 padding-right: 20px;
+	
+ }
+ .women-dropdown, .men-dropdown, .boys-dropdown, .girls-dropdown,.sales-dropdown,.sport-dropdown{
+	 width: 100%;
+    height: 400px;
+    z-index: 1;
+    background-color: white;
+    display: none;
+ }
+ .point{
+	 position: absolute;
+	bottom:-25px;
+	 right:2%;
+	 display: none;
+ }
+ .boys-dropdown, .girls-dropdown{
+	 height: 500px;
+ }
+ .sales-dropdown{
+	  height: 200px;
+ }
+ .sport-dropdown{
+	  height: 250px;
+ }
+ .profile-dropdown{
+	 background-color: white; 
+	 height:150px;
+	 width:150px;
+	 position: relative;
+	 left:90%;
+	 display: grid;
+	 grid-template-rows: 1fr 1fr;
+	 display: none;
+	 border:1px solid black;
+	 z-index: 1;
+	
+ }
+ .profile-dropdown p{
+	 color:black;
+	 border-bottom:1px solid #333333;
+	 width:100%;
+	 text-align: center;
+	 padding:30px 10px;
+	 font-weight: bold;
+	 
+	 
+ }
+ .profile-dropdown p:hover{
+	 border-bottom:3px solid silver;
+	 color: silver;
+	 text-decoration: none;
+ }
+ input{
+	 border-radius: 10px;
+	 background: black;
+	 color:white;
+	 width:150px;
+	 height:30px;
+	 text-align: left;
+	 margin:1px;
+	 border: none;
+	 outline: none;
+ }
+ .fa{
+	 
+	 color:white;
+	  font-size:30px;
+	  height:50px;
+	   width:50px;
+	   padding:10px;
+	 
+ }
+ .fa:hover{
+	 border:1px solid #848484; 
+ 	 border-radius: 50%;
+ 	 background-color:#848484;
+ }
+ footer{
+	height:700px;
+	background-color: black;
+	color:white;
+}
+.footer-sections1{padding-top: 3%;}
+.footer-sections{
+	display:grid;
+	grid-template-columns: repeat(6,auto);
+	justify-content: space-evenly;
+}
+.footer-sections-items{
+	
+	height: 60px;
+	width:180px;
+	text-align: center;
+	font-weight:bold;
+	background-color: #333333;
+	box-shadow: 0 3px 3px white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.footer-sections-items:hover{
+	box-shadow: 0 3px 3px greenyellow;
+}
+.footer-sections2{padding-top: 3%;}
+.common-class{
+	width:180px;
+	display:flex;
+	flex-direction: column;
+	gap: 7px;
+	
+}
+.common-class a{
+	color:white;
+	text-decoration: none;
+}
+.common-class  a:hover{
+	color:white;
+	text-decoration: underline;
+}
+.copy-write a:hover{
+	text-decoration: underline;
+}
+
+.copy-write{
+	width: 100%;
+	display: flex;
+	margin-top:3%;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-size: 13px;
+	gap: 25px;
+	background-color: #333333;
+	height:90px;
+}
+.follow-us-unique{
+	display: flex;
+	flex-direction: row;
+}

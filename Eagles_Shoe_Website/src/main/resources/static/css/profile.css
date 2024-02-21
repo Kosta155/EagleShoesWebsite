@@ -1,0 +1,95 @@
+@charset "ISO-8859-1";
+
+.hori-section {
+    height: 850px;
+    background-color: rgba(255, 255, 255, 0.1);
+    display: grid;
+    justify-content: center;
+    align-items: start;
+    position: relative;
+    margin-top:2%;
+    margin-bottom:2%;
+   
+}
+.hori-section{
+	display:grid;
+	justify-content: center;
+	grid-template-columns: auto auto;
+	column-gap:4%;
+	
+	
+}
+
+.section-item{
+	border: 1px solid silver;
+	width:300px;
+	height:500px;
+	padding: 10px;
+	
+	
+	
+}
+.section-item h1{padding-bottom: 20px;}
+.section-item-buttons{
+	display: flex;
+	flex-direction: column;
+	
+}
+.section-item-buttons button{
+	width: 90%;
+	text-align: left;
+	background-color: white;
+	color: black;
+	height:70px;
+	position: relative;
+	margin-left:5%;
+}
+button span{
+	position: absolute;
+	right: 5px;
+}
+.section-item2{
+	height:100%;
+	display: grid;
+	gap:10px;
+	width: 32rem;
+}
+.manage-account{
+	
+	gap:10px;
+	
+}
+.manage-account button{
+	width: 300px;
+	text-align: left;
+	background-color: white;
+	color: black;
+	height:50px;
+	border: 2px solid black;
+	margin-left: 5%;
+	position: relative;
+	font-size: 15px;
+}
+.manage-account button:hover{
+	background-color: black;
+	color: white;
+	border: none;
+	box-shadow: none;
+}
+
+.item{
+	display: grid;
+	grid-template-columns: auto;
+	justify-content: start;
+	padding:20px;
+	border:1px solid silver;
+	width:100%;
+}
+
+.section-item2 a{
+	padding-top: 10px;
+	text-decoration: underline;
+}
+.section-item2 a:hover{
+	color:green;
+}

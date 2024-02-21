@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org"
+	  xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+body {
+    background-color: #f2f2f2;
+    height: 900px;
+}
+header {
+    background-color: white;
+   height: 80px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    border-radius: 33px;
+    border: 2px solid rgb(128, 64, 64);
+    position: relative;
+}
+h1 {
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgb(128, 64, 64);
+    font-style: italic;
+    font-size: 35px;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.btn10 {
+    border: 2px solid #f2f2f2;
+    width: 300px;
+    border-radius: 30px;
+    color: rgb(128, 64, 64, 0.5);
+    padding: 15px 5px;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bolder;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.btn10:hover {
+    background-color: white;
+    color: #4CAF50;
+    border-color: #4CAF50;
+}
+main{
+			display: grid;
+	 		justify-content:center;
+	 		margin-top:80px;
+	 		height:35rem;	
+	 		align-content: space-around;
+	 		background-color: white;
+	 		width:600px;
+	 		border:2px solid whitesmoke;
+	 		border-radius: 30px;
+	 		margin-left:31%;
+	 }
+	 h2, h3{color:  rgb(128, 64, 64); text-align: center;}
+	img{justify-self: center;}
+</style>
+</head>
+<body>
+<header>
+	<h1>Contact Page</h1>
+</header>
+
+<a th:href="@{/}" >
+	<button class="btn10">Return Home</button>
+</a>
+<main>
+		<img th:src="@{/images/accessDenied.png}" width="50%">
+		<h2>Access Denied. Only Authorized Personnel Permitted</h2>
+		<h3>Thank you</h3>
+	</main>
+
+</body>
+</html>

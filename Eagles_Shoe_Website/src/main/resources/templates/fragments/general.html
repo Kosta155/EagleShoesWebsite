@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head th:fragment="headerfiles">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" href="">
+
+<title>Thymeleaf Fragments</title>
+<link th:href="@{/css/style.css}" rel="stylesheet">
+</head>
+<body>
+
+<div th:fragment="header" class="header-container">
+	<div class="headerItem headerItem1">
+				<h3>Get $100 for $75 shopping</h3>
+			</div>
+			<div class="headerItem headerItem2">
+				<div class="headerGrandItem headerGrandItem0">
+					<a th:href="@{/}">
+						<img th:src="@{/images/white.png}" style="width:130px;">	
+					</a>
+					
+					
+				</div>
+				
+				<div class="headerGrandItem headerGrandItem1">
+					<h6 class="dropdown">Women</h6>
+					<h6 class="dropdown">Men</h6>
+					<h6 class="dropdown">Boys</h6>
+					<h6 class="dropdown">Girls</h6>
+					<h6 class="dropdown">Sport</h6>
+					<h6 class="dropdown">Sales</h6>
+				</div>
+				<div class="headerGrandItem headerGrandItem2">
+                     
+                     <div class="text">
+  		             <input type="text" placeholder="Search">
+                     <span id="search" class="material-icons">&#xe8b6;</span>
+			    	</div>
+
+					<a th:href="@{/home/wishListPage}">
+						<i class="fa fa-heart" style='font-size:30px;'></i>
+					</a>
+					
+					<a th:href="@{/home/cartPage}">
+						<i class="fa fa-shopping-cart" style='font-size:30px;'></i>
+					</a>
+					
+					<a th:href="@{/home/profilePage}">
+						<i class="fa fa-user dropdown" style='font-size:28px; padding-left: 13px;'></i>
+					</a>	
+				</div>
+				<span class="point"style='font-size:50px;'>&#9650;</span>
+			</div>
+			<div class="women-dropdown"></div>
+			<div class="men-dropdown"></div>
+			<div class="boys-dropdown"></div>
+			<div class="girls-dropdown"></div>
+			<div class="sales-dropdown"></div>
+			<div class="sport-dropdown"></div>
+			<div class="profile-dropdown">
+				<a><p>My Profile</p></a>
+				<a><p style="border-bottom: none;">Log Out</p></a>
+			</div>
+</div>
+
+
+<div class="woof"></div>
+
+<footer th:fragment="footer">
+	<div class="footer-sections footer-sections1">
+		        <div class="footer-sections-items fotter-item1">
+		           
+		            <p>Contact Us <span style='font-size:18px;'>&#10230</span></p>
+		        </div>
+		        <div class="footer-sections-items">
+		          
+		            <p>Shipping info <span style='font-size:18px;'>&#10230</span></p> 
+		        </div>
+		        <div class="footer-sections-items">
+		         
+		            <p>Order Status <span style='font-size:18px;'>&#10230</span></p>
+		        </div>
+		        <div class="footer-sections-items">
+		           
+		            <p>Store Pickup <span style='font-size:18px;'>&#10230</span></p>
+		            
+		        </div>
+		        <div class="footer-sections-items">
+		           
+		            <p>Return Exchange <span style='font-size:18px;'>&#10230</span></p>
+		        </div>
+		        <div class="footer-sections-items">
+		            
+		            <p>Help <span style='font-size:18px;'>&#10230</span></p>
+		        </div>
+		    </div>
+		
+		    <div class="footer-sections footer-sections2">
+		        <div class="common-class product-unique">
+		            <h3>PRODUCT</h3>
+		            <a href="#">Corporates</a>
+		            <a href="#">Boots</a>
+		            <a href="#">Casual</a>
+		            <a href="#">New Arrivals</a>
+		            <a href="#">Best Sellers</a>
+		            <a href="#">Release Dates</a>
+		            <a href="#">Outlet</a>
+		            <a href="#">Exclusives Deals</a>
+		        </div>
+		
+		        <div class="common-class sports-unique">
+		            <h3>SPORTS</h3>
+		            <a href="#">Soccer</a>
+		            <a href="#">Running</a>
+		            <a href="#">Basketball</a>
+		            <a href="#">Training</a>
+		            <a href="#">Golf</a>
+		            <a href="#">Hockey</a>
+		            <a href="#">Outdoor</a>
+		            <a href="#">Tennis</a>
+		            <a href="#">Snowboarding</a>
+		            <a href="#">Volleyball</a>
+		            <a href="#">Swimming</a>
+		            <a href="#">Skateboarding</a>
+		        </div>
+		
+		        <div class="common-class brands-unique">
+		            <h3>BRANDS</h3>
+		            <a href="#">Nike</a>
+		            <a href="#">Adidas</a>
+		            <a href="#">Puma</a>
+		            <a href="#">New Balance</a>
+		            <a href="#">Reebok</a>
+		            <a href="#">Under Armour</a>
+		            <a href="#">Converse</a>
+		            <a href="#">Vans</a>
+		            <a href="#">Asics</a>
+		            <a href="#">Skechers</a>
+		            <a href="#">Fila</a>
+		            <!-- Corporate Shoe Brands -->
+		            <a href="#">Cole Haan</a>
+		            <a href="#">ECCO</a>
+		            <a href="#">Clarks</a>
+		            <a href="#">Rockport</a>
+		            <a href="#">Hush Puppies</a>
+		            <a href="#">Allen Edmonds</a>
+		        </div>
+		
+		        <div class="common-class ">
+		            <h3>FOLLOW US</h3>
+		            <div class="follow-us-unique">
+			            <a href="#" class="fa fa-facebook" style='font-size:30px;'></a>
+						<a href="#" class="fa fa-twitter" style='font-size:30px;'></a>
+						<a href="#" class="fa fa-youtube" style='font-size:30px;'></a>
+						<a href="#" class="fa fa-instagram" style='font-size:30px;'></a>
+						
+					</div>
+		        </div>
+		        <div class="common-class support-unique">
+		            <h3>SUPPORT</h3>
+		            <a href="">Help & Customer Service</a>
+		            <a href="">Contact Us</a>
+		            <a href="">Returns & Exchanges</a>
+		            <a href="">Shipping</a>
+		            <a href="">Order Tracker</a>
+		            <a href="">Gift Cards</a>
+		            <a href="">Store Locator</a>
+		            <a href="">How to Clean</a>
+		            <a href="">Affiliate Program</a>
+		            <a href="">Team Uniform Inquiries</a>
+		        </div>
+		
+		        <div class="common-class about-unique">
+		            <h3>Our Team</h3>
+		            <a href="#">About Us</a>
+		            <a href="#">Careers</a>
+		            <a href="#">Eagles News</a>
+		            <a href="#">Eagles Team</a>
+		            <a href="#">Sustainability</a>
+		            <a href="#">Mobile Apps</a>
+		            
+		        </div>
+		    </div>
+		    <div class="copy-write">
+				<div>
+					<a>Cookies </a> |
+					<a>Privacy Policy </a> |
+					<a>Terms and Conditions</a>
+				</div>
+				
+				<p>&copy; 2024 Eagles Team</p>
+			</div>
+			
+	
+</footer>
+
+</body>
+</html>

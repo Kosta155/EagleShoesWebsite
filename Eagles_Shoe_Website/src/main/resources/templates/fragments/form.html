@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<div th:fragment="formField (field, value, size)">
+		<div>
+			<label th:for="${#strings.toLowerCase(field)}"> 
+				<span th:text="${field}">Field</span>
+			</label>
+		</div>
+		<div>
+			<input type="text" th:id="${#strings.toLowerCase(field)}"
+			th:name="${#strings.toLowerCase(field)}" th:value="${value}"
+			th:size="${size}">
+		</div>
+	</div>
+</head>
+<body>
+	
+</body>
+</html>

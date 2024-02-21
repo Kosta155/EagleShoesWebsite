@@ -1,0 +1,290 @@
+/* Reset and Global Styles */
+@charset "ISO-8859-1";
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Section 1 Styles */
+.section1 {
+    height: 900px;
+    background-size: cover;
+    background-image: url("https://www.keeponrunning.com.au/cdn/shop/files/Men_Running_1600x.png?v=1613531490");
+    background-position-y: 100%;
+    display: grid;
+    grid-template-columns: 40% 57%;
+    column-gap: 3%;
+}
+
+.section1-button {
+    display: grid;
+    grid-template-rows: 30% repeat(3, 20%);
+    color: white;
+    justify-content: center;
+    height: 300px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 30px;
+    align-content: center;
+    width: 100%;
+    margin: 120px;
+}
+
+.section1-button h2 {
+    text-shadow: 0 5px 10px black;
+}
+
+button {
+    color: white;
+    background-color: black;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    border: 1px solid silver;
+    padding: 0px 10px 0px 20px;
+    height: 45px;
+    font-size: 20px;
+    align-self: self-end;
+    box-shadow: 0 3px 8px rgba(255, 255, 255);
+}
+
+button:hover {
+    box-shadow: 0 3px 8px greenyellow;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.section1-discount {
+    display: grid;
+    justify-content: center;
+    padding: 50px 0px 0px 100px;
+}
+
+/* Section 2 Styles */
+.section2 {
+    height: 2000px;
+    background-size: cover;
+    
+}
+
+.section2-sport {
+    height: 33%;
+    padding-top: 3%;
+}
+
+.section2-coporate {
+    height: 40%;
+    padding-top: 3%;
+}
+
+.header-section2 {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.header-section2 h1 {
+    font-size: 25px;
+}
+
+.header-section2 p {
+    font-size: 18px;
+}
+
+.type-sport {
+    display: flex;
+    gap: 15px;
+    padding: 12px;
+    margin-top: 30px;
+}
+
+.type-sport-items {
+    height: 420px;
+    width: 38%;
+    position: relative;
+    border: 1px solid silver;
+}
+
+
+.type-sport-items h3 {
+    position: absolute;
+    bottom: 10px;
+    left: 7px;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.shoe-desc{
+	position: absolute;
+	bottom: -4rem;
+}
+
+.type-sport-items:hover {
+    border: 1px solid black;
+    border-bottom: 5px solid black;
+}
+
+.cooporate {
+    display: flex;
+    justify-content: space-around;
+}
+
+.cooporate .type-sport-items {
+    height: 580px;
+    width: 40%;
+}
+
+.section2-featuredKicks{
+	height:35%;  
+	margin-top:80px;
+	padding: 15px;
+	
+	}
+.section2-featuredKicks h1{
+	padding-bottom: 20px;
+	
+}
+.container-featured-shoes {
+  display: grid;
+  grid-auto-flow:column;
+  grid-auto-columns: 18%;
+  gap: var(--size-3);
+  overflow-x: auto;
+  overflow-y: hidden;
+  /* Remove duplicate justify-content */
+  justify-content: start;
+  column-gap: 1%;
+ overscroll-behavior-inline: contain;
+padding-bottom: 6rem;
+}
+.describe{
+	color: rgb(128, 128, 128);
+}
+.container-featured-shoes::-webkit-scrollbar {
+  
+  height:5px;
+}
+
+/* Track */
+.container-featured-shoes::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+.container-featured-shoes::-webkit-scrollbar-thumb {
+  background: black; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.container-featured-shoes::-webkit-scrollbar-thumb:hover {
+  background: rgba(0,0,0,0.3); 
+}
+
+
+.container-featured-shoes-items{
+	border:1px solid silver;
+	height:340px;
+	position: relative;
+}
+.container-featured-shoes-items:hover {
+    border: 1px solid black;
+}
+
+.price{
+	position: absolute;
+	font-size: 18px;
+	bottom: 0px;
+	left:0px;
+	font-weight: bold;
+	background-color: black;
+	color: white;
+	padding:5px;
+}
+.name{
+	padding-top: 10px;
+	font-size:18px;
+}
+.container-featured-shoes-items i
+{
+	color:silver; 
+	position: absolute; 
+	top:5px; 
+	right:15px;
+}
+.container-featured-shoes-items i:hover{
+	background-color: transparent;
+	border:none;
+	}
+	
+/* Section 3 Styles */
+.section3 {
+    height: 750px;
+    display: grid;
+    grid-template-columns: repeat(2, 48%);
+    justify-content: space-around;
+    align-items: center;
+   
+}
+
+.section3-items {
+    display: grid;
+    grid-template-rows: 82% 8% 5%;
+    height: 90%;
+}
+
+.section3-items img {
+    height: 100%;
+}
+
+.section3-items a {
+    justify-self: center;
+    padding-top: 20px;
+}
+
+.section3-items h1 {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 32px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: italic;
+}
+.section3-items button {
+    border: 2px solid black;
+    background-color: white;
+    color: black;
+}
+
+.section3-items button:hover {
+    box-shadow: 0 3px 8px white;
+    background-color: black;
+    color: white;
+}
+
+
+
+/* Section 4 Styles */
+#shoe {
+    position: absolute;
+}
+
+.section4 {
+    height: 150px;
+    background-image: url("https://img.freepik.com/free-vector/set-basic-doodle-arrows_78370-1785.jpg?size=626&ext=jpg&uid=R113643224&ga=GA1.1.1824738532.1700614501&semt=ais");
+    background-size: cover;
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    align-content: center;
+    column-gap: 30px;
+    font-weight: bold;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 26px;
+}
+
+.section4 button {
+    background-color: black;
+    color: white;
+    height: 50px;
+}
+

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmnls:th="http://www.thymeleaf.org">
+<head>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" th:href="@{/css/index.css}">
+<link rel="stylesheet" th:href="@{/css/general.css}">
+<link rel="stylesheet" th:href="@{/css/profile.css}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+<body>
+	
+	<div class="main-container">
+		<header th:include="fragments/general.html :: header">
+		</header>
+		<section class="section hori-section">
+			<div class="section-item">
+				<h1>Account Overview</h1>
+				<div class="section-item-buttons">
+					<a th:href="@{/home/profilePage}">
+						<button style="background-color: black; color:white ;">Personal Information <span>&#10230</span></button>
+					</a>
+				    <a th:href="@{/home/addressPage}">
+						<button>Addresses <span>&#10230</span></button>
+					</a>
+					<a th:href="@{/home/orderHistory}">
+						<button>My Orders <span>&#10230</span></button>
+					</a>
+					<a th:href="@{/home/paymentPage}">
+						<button>Payments <span>&#10230</span></button>
+					</a>
+					<a th:href="@{/home/wishListPage}">
+						<button>Favourites <span>&#10230</span></button>
+					</a>
+					<a th:href="@{/logout}">
+						<button>Log Out <span>&#10230</span></button>
+					</a>
+				</div>
+			</div>
+			
+			<div class="section-item2">
+				<div class="item contact-info">
+					<h2>Contact Information</h2>
+					<p>Username</p>
+					<p>Postalcode</p>
+					<a>Edit</a>
+				</div>
+				<div class="item email-info">
+					<h2>Email</h2>
+					<p>example@gmail.com</p>
+					<a>Edit</a>
+				</div>
+				<div class="item password-info">
+					<h2>Password</h2>
+					<p>********</p>
+					<a>Edit</a>
+				</div>
+				<div class="item language-info">
+					<h2>Preferred Language</h2>
+					<p>English</p>
+					<a>Edit</a>
+				</div>
+				<div class="item manage-account">
+					<h2>Manage Account</h2>
+					<a th:href="@{/logout}">
+						<button>LOG ME OUT <span>&#10230</span></button>
+					</a>
+					<a th:href="@{/logout}">
+						<button>DELETE MY ACCOUNT <span>&#10230</span></button>
+					</a>
+					
+					
+				</div>
+			</div>
+			
+		</section>
+		<hr>
+		<footer th:include="fragments/general.html :: footer"></footer>	
+	</div>
+	<script th:src="@{/Script/dropdown.js}"></script>
+</body>
+</html>

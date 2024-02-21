@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmnls:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" th:href="@{/css/index.css}">
+<link rel="stylesheet" th:href="@{/css/general.css}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
+</head>
+<body>
+	
+	<div class="main-container">
+		<header th:include="~{fragments/general.html :: header}">
+		</header>
+		
+		
+		ss
+		
+		<section  class="section section4">
+			<h1>BECOME A MEMBER & GET 30% OFF</h1>
+			<a><button>SIGN UP FOR FREE  <span style='font-size:27px;'>&#10230</span></button></a>
+		</section>
+		<footer th:include="fragments/general.html :: footer"></footer>	
+	</div>
+	<script th:src="@{/Script/dropdown.js}"></script>
+	<script th:src="@{/Script/favourite.js}"></script>
+	
+	
+</body>
+</html>

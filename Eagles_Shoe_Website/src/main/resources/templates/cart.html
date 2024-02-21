@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmnls:th="http://www.thymeleaf.org">
+<head>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" th:href="@{/css/index.css}">
+<link rel="stylesheet" th:href="@{/css/general.css}">
+<link rel="stylesheet" th:href="@{/css/cart.css}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+<body>
+	
+	<div class="main-container">
+		<header th:include="fragments/general.html :: header">
+		</header>
+		<section class="section cart-section1">
+				<div class="cart-status">
+						
+					<img th:src="@{/images/cart.png}" style="width:230px;">
+					<p>Hi User, Your Shopping Cart is Empty</p>
+					<a th:href="@{/}"><button>Start Shopping <span style='font-size:27px;'>&#10230</span></button></a>
+				</div>
+		</section>
+		<hr>
+		<footer th:include="fragments/general.html :: footer"></footer>	
+	</div>
+	<script th:src="@{/Script/dropdown.js}"></script>
+</body>
+</html>

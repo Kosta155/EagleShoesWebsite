@@ -1,0 +1,34 @@
+@charset "ISO-8859-1";
+
+.cart-section1 {
+    height: 500px;
+    background-color: rgba(255, 255, 255, 0.1);
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.cart-status {
+    display: flex;
+    background-color: white;
+    width: 700px;
+    height: 500px;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+}
+
+.cart-status h2 {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-size: 35px;
+}
+
+hr {
+   
+    position: absolute;
+    top: 2px;
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmnls:th="http://www.thymeleaf.org">
+<head>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" th:href="@{/css/index.css}">
+<link rel="stylesheet" th:href="@{/css/general.css}">
+<link rel="stylesheet" th:href="@{/css/profile.css}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+	.section-item2{
+		display: flex;
+		flex-direction: column;
+	}
+	
+	.item{
+		margin-left:5%;
+	}
+	
+</style>
+
+</head>
+<body>
+	
+	<div class="main-container">
+		<header th:include="fragments/general.html :: header">
+		</header>
+		<section class="section hori-section">
+			<div class="section-item">
+				<h1>Account Overview</h1>
+				<div class="section-item-buttons">
+					<a th:href="@{/home/profilePage}">
+						<button >Personal Information <span>&#10230</span></button>
+					</a>
+				    <a th:href="@{/home/addressPage}">
+						<button>Addresses <span>&#10230</span></button>
+					</a>
+					<a th:href="@{/home/orderHistory}">
+						<button style="background-color: black; color:white ;">My Orders <span>&#10230</span></button>
+					</a>
+					<a th:href="@{/home/paymentPage}">
+						<button>Payments <span>&#10230</span></button>
+					</a>
+					<a th:href="@{/home/wishListPage}">
+						<button>Favourites <span>&#10230</span></button>
+					</a>
+					<a th:href="@{/logout}">
+						<button>Log Out <span>&#10230</span></button>
+					</a>
+				</div>
+			</div>
+			
+			<div class="section-item2">
+				<h1>Order History</h1>
+				<div class="item">
+					<h3>No order history found: &#43 <a>Place new order</a></h3>
+					
+				</div>
+				<img th:src="@{https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrFAAZeji11UIfSYBFdZfnaXHapdHfIQK1gVizQRxyfIWmbuZVqiQTVNKFKFB7UB_MEWY&usqp=CAU}
+				" width="270px" style="margin:7% 25%;">
+				
+				
+			</div>
+			
+		</section>
+		<hr>
+		<footer th:include="fragments/general.html :: footer"></footer>	
+	</div>
+	<script th:src="@{/Script/dropdown.js}"></script>
+</body>
+</html>

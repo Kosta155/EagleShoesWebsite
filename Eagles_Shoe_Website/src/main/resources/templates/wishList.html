@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmnls:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" th:href="@{/css/index.css}">
+<link rel="stylesheet" th:href="@{/css/general.css}">
+<link rel="stylesheet" th:href="@{/css/cart.css}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
+</head>
+<body>
+	
+	<div class="main-container">
+		<header th:include="fragments/general.html :: header">
+		</header>
+			<section class="section cart-section1">
+				<div class="cart-status">
+						
+				
+					<img th:src="@{https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEMPqFWuJhjX9J-z-wCcyiEOVlHHPQLlNIRcdAqL-XV0jnKNU7qP_QPMmJLISuVwyXhq8&usqp=CAU}" style="width:220px;">
+					<p>Hi User, Your Wishlist is Empty</p>
+					<a th:href="@{/}"><button>Add Favourites <span style='font-size:27px;'>&#10230</span></button></a>
+				</div>
+		</section>
+
+		<footer th:include="fragments/general.html :: footer"></footer>	
+	</div>
+	<script th:src="@{/Script/dropdown.js}"></script>
+</body>
+</html>
