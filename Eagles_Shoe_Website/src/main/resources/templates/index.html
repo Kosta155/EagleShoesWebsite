@@ -10,7 +10,7 @@
       rel="stylesheet">
 
 </head>
-<body>
+<body onload="loadData()">
 	
 	<div class="main-container">
 		<header th:include="~{fragments/general.html :: header}">
@@ -87,7 +87,7 @@
 						
 						<div th:each="shoe : ${shoes}" class="container-featured-shoes-items">
                         <img th:src="${shoe.pictureURL}" width="100%" height="100%">
-                         <i class="fa fa-heart favourite" style='font-size:35px;'></i>
+                         <i th:id="${shoe.shoeName}" class="fa fa-heart favourite" style='font-size:35px;'></i>
                          <p class="price" th:text="${'C$ ' + shoe.price}"></p>
                          <img class="heart">
                          <div class="shoe-desc">

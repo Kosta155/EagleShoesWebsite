@@ -64,6 +64,7 @@ public class SecurityConfig {
 				.requestMatchers(antMatcher("/")).permitAll()
 				.requestMatchers(antMatcher("/home/**")).permitAll()
 				.requestMatchers(antMatcher("/Script/**")).permitAll()
+				.requestMatchers(antMatcher("/getFavorites")).permitAll()
 				.anyRequest().authenticated()
 				)
 		.formLogin((formLogin)->formLogin

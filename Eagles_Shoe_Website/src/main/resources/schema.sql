@@ -60,3 +60,4 @@ CREATE TABLE favorites (
   CONSTRAINT fav_FK1 FOREIGN KEY (shoeId) REFERENCES shoes (shoeId),
   CONSTRAINT fav_FK2 FOREIGN KEY (email) REFERENCES members (email)
 );
+

@@ -23,7 +23,6 @@ public class Shoe_Controller {
 	{
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 	    String username = authentication.getName();
-	    System.out.println(username);
 	    List<Shoe> shoes = shoeRepo.getAllAvailableShoes();	
 	    model.addAttribute("username",username);
 		model.addAttribute("shoes",shoes);
