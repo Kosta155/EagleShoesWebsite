@@ -51,6 +51,12 @@ elements2.forEach(element => {
 		for(let value of dataJSON){
         favorites.push(value.shoeName);
         localStorage.setItem("favorites",favorites);
+        elements2.forEach(x => {
+			if(favorites.includes(x.id))
+			{
+				x.style.color = "black";
+			}
+		})
     }
 	}
 
