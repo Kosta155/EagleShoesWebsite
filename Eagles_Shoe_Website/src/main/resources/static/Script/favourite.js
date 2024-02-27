@@ -3,7 +3,6 @@
  */
 const elements2 = document.querySelectorAll(".favourite");
 
-
 let favorites = [];
 elements2.forEach(element => {
     element.addEventListener("click", function() {
@@ -20,17 +19,15 @@ elements2.forEach(element => {
         } else {
             element.style.color = "black";
         }
-         const shoeName = element.id;
-         if(favorites.includes(shoeName))
+         const shoeId = element.id;
+         if(favorites.includes(shoeId))
          {
-			favorites = favorites.filter(name => name !== shoeName);
-			localStorage.setItem("favorites",favorites);
+			favorites = favorites.filter(id => id !== shoeId);
 		 }
 		 else{
-         favorites.push(shoeName);
-         localStorage.setItem("favorites",favorites);
+         favorites.push(shoeId);
          }         
-         console.log(shoeName);
+         console.log(shoeId);
     }
     });
 });
@@ -41,18 +38,19 @@ elements2.forEach(element => {
         .then(res => res.json())
 	    .then(dataJSON => {
 	     reloadFavorites(dataJSON);
-		console.log(dataJSON);
+		 console.log(dataJSON);
 	})
 	}
 	
 	function reloadFavorites(dataJSON)
 	{
 		favorites=[]
+		console.log(dataJSON);
 		for(let value of dataJSON){
-        favorites.push(value.shoeName);
+        favorites.push(value.shoeId);
         localStorage.setItem("favorites",favorites);
         elements2.forEach(x => {
-			if(favorites.includes(x.id))
+			if(favorites.includes(parseInt(x.id)))
 			{
 				x.style.color = "black";
 			}
@@ -60,13 +58,36 @@ elements2.forEach(element => {
     }
 	}
 
-    function sendDataToController(shoeName) {
+window.addEventListener("beforeunload", async function(e) {
+	 
+  if (!favorites.length) return; // Skip if no favorites
+  try {
+    const response = await fetch("/favorites/save", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(favorites)
+    });
+
+    if (!response.ok) {
+      // Handle errors gracefully, e.g., log, display message
+      console.error("Error saving favorites:", response.statusText);
+    }
+  } catch (error) {
+    // Handle network errors
+    console.error("Error sending favorites:", error);
+  }
+});
+
+
+    function sendDataToController(shoeId) {
   fetch('/addFavourite', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({ shoeName: shoeName })
+    body: JSON.stringify({ shoeId: shoeId })
   })
   .then(response => response.json())
   .then(responseData => {
@@ -76,3 +97,4 @@ elements2.forEach(element => {
     console.error('Error:', error);
   });
 }
+

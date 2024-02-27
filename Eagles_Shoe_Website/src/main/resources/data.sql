@@ -58,9 +58,5 @@ VALUES ( 'Puma Skeakers', 'Puma', 'Sport', 'Male', 300, CURDATE(), 0, 'White', 9
 
 
 
-INSERT INTO favorites (favoriteId, email, shoeId)
-VALUES (1, 'kostika@example.com', 1);
-INSERT INTO favorites (favoriteId, email, shoeId)
-VALUES (2, 'kostika@example.com', 2);
 
 

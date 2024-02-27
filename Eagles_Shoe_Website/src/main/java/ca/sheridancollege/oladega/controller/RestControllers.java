@@ -1,5 +1,6 @@
 package ca.sheridancollege.oladega.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.http.ResponseEntity;
@@ -8,6 +9,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -29,6 +31,21 @@ public class RestControllers {
 	        // Return a response if needed
 	        return "Data received successfully";
 	    }
+	 
+	 
+	 @PostMapping("/favorites/save")
+	 public ResponseEntity<Void> saveFavorites(@RequestBody List<String> favoriteShoeNames) {
+		 
+		 List<Integer> favoriteShoeIds = new ArrayList<>();
+	        for (String str : favoriteShoeNames) {
+	            favoriteShoeIds.add(Integer.parseInt(str));
+	        }
+
+		  Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		  String username = authentication.getName();
+          shoeRepo.saveFavoritesForUser(username, favoriteShoeIds);
+          return ResponseEntity.ok().build();
+          }
 	 
 	 @GetMapping("/getFavorites")
 	    public ResponseEntity<List<Shoe>> getFavorites() {
