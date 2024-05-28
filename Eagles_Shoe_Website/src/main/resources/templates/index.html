@@ -83,14 +83,12 @@
 				<div class="section2-featuredKicks">
 					<h1>ALL FEATURED SHOES</h1>
 					<div class="container-featured-shoes">
-						
-						
 						<div th:each="shoe : ${shoes}" class="container-featured-shoes-items">
-                        <img th:src="${shoe.pictureURL}" width="100%" height="100%">
+                         <img th:src="${shoe.pictureURL}" width="100%" height="100%">
                          <i th:id="${shoe.shoeId}" class="fa fa-heart favourite" style='font-size:35px;'></i>
                          <p class="price" th:text="${'C$ ' + shoe.price}"></p>
                          <img class="heart">
-                         <div class="shoe-desc">
+                         <div class="shoe-desc" th:id="${shoe.shoeName}">
 							 <h6 class="name" th:text="${shoe.shoeName}"></h6>
 	                         <p class="describe">Men's Shoe</p>
 	                         <p class="describe">3 Colors</p>

@@ -9,6 +9,7 @@ import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
+import ca.sheridancollege.oladega.beans.Address;
 import ca.sheridancollege.oladega.beans.User;
 import org.springframework.stereotype.Repository;
 import lombok.AllArgsConstructor;
@@ -17,7 +18,6 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class SecurityReprisotory {
 	private NamedParameterJdbcTemplate jdbc;
-	
 	public User findUserByEmail(String email)
 	{
 		MapSqlParameterSource parameters = new MapSqlParameterSource();
@@ -27,6 +27,21 @@ public class SecurityReprisotory {
 		if(user.size()>0)
 		{
 			return user.get(0);
+		}
+		else
+		{
+			return null;
+		}
+	}
+	
+	public List<Address> getAddressesByEmail(String email){
+		MapSqlParameterSource parameters = new MapSqlParameterSource();
+		String query = "SELECT * from address WHERE email=:email)";
+		parameters.addValue("email", email);
+		List<Address> addressList = jdbc.query(query,parameters, new BeanPropertyRowMapper<>(Address.class));
+		if(addressList.size()>0)
+		{
+			return addressList;
 		}
 		else
 		{

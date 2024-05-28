@@ -56,13 +56,26 @@ public class ShoeRepository {
 	
 	
 	public void saveFavoritesForUser(String username, List<Integer> favoriteShoes) {
+		
+		 MapSqlParameterSource parameters = new MapSqlParameterSource();
+	        String query = "DELETE from favorites where email=:e";
+	        parameters.addValue("e",username);
+	        jdbc.update(query,parameters);
+
 	    for (int shoeId : favoriteShoes) {
-	        MapSqlParameterSource parameters = new MapSqlParameterSource();
-	        String query = "INSERT INTO favorites (email, shoeId) VALUES (:e, :s)";
-	        parameters.addValue("e", username); 
-	        parameters.addValue("s", shoeId);     
-	        jdbc.update(query, parameters);
+	        MapSqlParameterSource parameters2 = new MapSqlParameterSource();
+	        String query2 = "INSERT INTO favorites (email, shoeId) VALUES (:e, :s)";
+	        parameters2.addValue("e", username); 
+	        parameters2.addValue("s", shoeId);     
+	        jdbc.update(query2, parameters2);
 	    }
+	}
+
+	public void emptyFavoritesForUser(String username) {
+		 MapSqlParameterSource parameters = new MapSqlParameterSource();
+	        String query = "DELETE from favorites where email=:e";
+	        parameters.addValue("e",username);
+	        jdbc.update(query,parameters);	
 	}
 
 	

@@ -34,16 +34,26 @@ public class RestControllers {
 	 
 	 
 	 @PostMapping("/favorites/save")
-	 public ResponseEntity<Void> saveFavorites(@RequestBody List<String> favoriteShoeNames) {
+	 public ResponseEntity<Void> saveFavorites(@RequestBody List<Shoe> favoriteShoes) {
 		 
+		 System.out.println("Saving" + favoriteShoes);
 		 List<Integer> favoriteShoeIds = new ArrayList<>();
-	        for (String str : favoriteShoeNames) {
-	            favoriteShoeIds.add(Integer.parseInt(str));
+	        for (Shoe shoe : favoriteShoes) {
+	            favoriteShoeIds.add(shoe.getShoeId());
 	        }
 
 		  Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		  String username = authentication.getName();
           shoeRepo.saveFavoritesForUser(username, favoriteShoeIds);
+          return ResponseEntity.ok().build();
+          }
+	 
+	 @PostMapping("/favorites/saveEmpty")
+	 public ResponseEntity<Void> saveFavoritesEmpty() {
+		 
+		  Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		  String username = authentication.getName();
+          shoeRepo.emptyFavoritesForUser(username);
           return ResponseEntity.ok().build();
           }
 	 

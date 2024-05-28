@@ -34,8 +34,14 @@ public class Shoe_Controller {
 		return "cart.html";
 	}
 	@GetMapping("/home/wishListPage")
-	public String getwishListPage()
+	public String getwishListPage(Model model)
 	{
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+	    String username = authentication.getName();
+	    List<Shoe> shoes = shoeRepo.getFavoritesByUserId(username);	
+	    System.out.println(shoes);
+	    model.addAttribute("username",username);
+		model.addAttribute("shoes",shoes);
 		return "wishList.html";
 	}
 	@GetMapping("/home/profilePage")

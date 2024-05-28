@@ -1,11 +1,14 @@
-INSERT INTO members (email,username, encryptedPassword, "ENABLED", address)
-VALUES ('kostika@example.com','kostika', '$2a$10$d8r8Z4P6A6jCTnmiYge.TecGJxZYcd6zkjCfXCDWBbGbDL8EHG7Ay', true, '123 Main St');
+INSERT INTO members (email,username, encryptedPassword, "ENABLED")
+VALUES ('kostika@example.com','kostika', '$2a$10$d8r8Z4P6A6jCTnmiYge.TecGJxZYcd6zkjCfXCDWBbGbDL8EHG7Ay', true);
 
-INSERT INTO members (email,username, encryptedPassword, "ENABLED", address)
-VALUES ('kostikanini@example.com','kostikas', '$2a$10$d8r8Z4P6A6jCTnmiYge.TecGJxZYcd6zkjCfXCDWBbGbDL8EHG7Ay', true, '123 Main St');
+INSERT INTO members (email,username, encryptedPassword, "ENABLED")
+VALUES ('kostikanini@example.com','kostikas', '$2a$10$d8r8Z4P6A6jCTnmiYge.TecGJxZYcd6zkjCfXCDWBbGbDL8EHG7Ay', true);
 
-INSERT INTO orders ( orderTime, email, address)
-VALUES ( '2024-01-06 12:30:00', 'kostikanini@example.com', '123 Main St');
+INSERT INTO address (street, city, province,country,postalCode , email)
+VALUES ('234 Wildgrass Rd','Mississauga','Ontario','Canada','L5B4H8','kostikanini@example.com');
+
+INSERT INTO orders ( orderTime, email, addressId)
+VALUES ( '2024-01-06 12:30:00', 'kostikanini@example.com', 1);
 
 INSERT INTO sec_role (roleId, roleName)
 VALUES (1, 'ROLE_MEMBER');
@@ -55,8 +58,3 @@ VALUES ( 'Puma Speakers', 'Puma', 'Sport', 'Male', 300, CURDATE(), 0, 'White', 9
 
 INSERT INTO Shoes ( shoeName, shoeBrand, shoeType, gender, price, shoeDate, discount, color, size, orderId, pictureURL, picture2URL, picture3URL, picture4URL)
 VALUES ( 'Puma Skeakers', 'Puma', 'Sport', 'Male', 300, CURDATE(), 0, 'White', 9, 1, 'https://images.footlocker.com/is/image/EBFL2/4206708_a1?wid=581&hei=581&fmt=png-alpha', 'NikeRunning.jpg', 'NikeRunning.jpg', 'NikeRunning.jpg');
-
-
-
-
-

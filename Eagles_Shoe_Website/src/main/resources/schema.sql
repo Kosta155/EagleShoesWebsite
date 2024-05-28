@@ -3,16 +3,29 @@ CREATE TABLE members (
   username varchar(50) NOT NULL,
   encryptedPassword varchar(128) NOT NULL,
   "ENABLED" boolean NOT NULL,  -- Corrected data type to boolean
-  address varchar(50),
   PRIMARY KEY (email)
+);
+
+CREATE TABLE address(
+  addressId bigint NOT NULL AUTO_INCREMENT,
+  street varchar(50) NOT NULL,
+  city varchar(50) NOT NULL,
+  province varchar(40) NOT NULL,
+  country varchar(50) NOT NULL,
+  postalCode varchar(10) NOT NULL,
+  email varchar (50) NOT NULL,
+  PRIMARY KEY (addressId),
+  CONSTRAINT mambers_FK1 FOREIGN KEY (email) REFERENCES members (email)
 );
 
 CREATE TABLE orders (
   orderId bigint NOT NULL AUTO_INCREMENT,
   orderTime datetime NOT NULL,
   email varchar(80) NOT NULL,
-  address varchar(150) NOT NULL,
-  PRIMARY KEY (orderId)
+  addressId bigint NOT NULL,
+  PRIMARY KEY (orderId),
+  CONSTRAINT oder_FK1 FOREIGN KEY (addressId) REFERENCES address (addressId)
+
 );
 
 CREATE TABLE sec_role (

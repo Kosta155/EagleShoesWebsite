@@ -1,87 +1,106 @@
 <!DOCTYPE html>
-<html xmnls:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-<link rel="stylesheet" th:href="@{/css/index.css}">
-<link rel="stylesheet" th:href="@{/css/general.css}">
-<link rel="stylesheet" th:href="@{/css/profile.css}">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-	.section-item2{
-		display: flex;
-		flex-direction: column;
-	}
-	.adresses{
-		display:grid;
-		gap:8px;
-	}
-	.item{
-		margin-left:5%;
-	}
-</style>
-
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta charset="ISO-8859-1">
+    <title>Insert title here</title>
+    <link rel="stylesheet" th:href="@{/css/index.css}">
+    <link rel="stylesheet" th:href="@{/css/general.css}">
+    <link rel="stylesheet" th:href="@{/css/profile.css}">
+    <link rel="stylesheet" th:href="@{/css/modal.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+	    </style>
 </head>
 <body>
-	
-	<div class="main-container">
-		<header th:include="fragments/general.html :: header">
-		</header>
-		<section class="section hori-section">
-			<div class="section-item">
-				<h1>Account Overview</h1>
-				<div class="section-item-buttons">
-					<a th:href="@{/home/profilePage}">
-						<button >Personal Information <span>&#10230</span></button>
-					</a>
-				    <a th:href="@{/home/addressPage}">
-						<button style="background-color: black; color:white ;">Addresses <span>&#10230</span></button>
-					</a>
-					<a th:href="@{/home/orderHistory}">
-						<button>My Orders <span>&#10230</span></button>
-					</a>
-					<a th:href="@{/home/paymentPage}">
-						<button>Payments <span>&#10230</span></button>
-					</a>
-					<a th:href="@{/home/wishListPage}">
-						<button>Favourites <span>&#10230</span></button>
-					</a>
-					<a th:href="@{/logout}">
-						<button>Log Out <span>&#10230</span></button>
-					</a>
-				</div>
+<div class="main-container">
+    <header th:include="fragments/general.html :: header"></header>
+    <section class="section hori-section">
+        <div class="section-item">
+            <h1>Account Overview</h1>
+            <div class="section-item-buttons">
+                <a th:href="@{/home/profilePage}">
+                    <button>Personal Information <span>&#10230;</span></button>
+                </a>
+                <a th:href="@{/home/addressPage}">
+                    <button style="background-color: black; color:white;">Addresses <span>&#10230;</span></button>
+                </a>
+                <a th:href="@{/home/orderHistory}">
+                    <button>My Orders <span>&#10230;</span></button>
+                </a>
+                <a th:href="@{/home/paymentPage}">
+                    <button>Payments <span>&#10230;</span></button>
+                </a>
+                <a th:href="@{/home/wishListPage}">
+                    <button>Favourites <span>&#10230;</span></button>
+                </a>
+                <a th:href="@{/logout}">
+                    <button>Log Out <span>&#10230;</span></button>
+                </a>
+            </div>
+        </div>
+        <div class="section-item2">
+            <h1>Addresses</h1>
+            <div class="item">
+                <h3 id="add">&#43;<a>Add new address</a></h3>
+            </div>
+            <div class="item adresses">
+                <h3>Username</h3>
+                <p>123, First Address Street, Brampton, ON, L9B 6Y8</p>
+                <div>
+                    <a>Edit</a> | <a>Remove</a>
+                </div>
+            </div>
+            <div class="item adresses">
+                <h3>Username</h3>
+                <p>456, Second Address Street, Toronto, ON, L6A 7J9</p>
+                <div>
+                    <a>Edit</a> | <a>Remove</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <div class="hidden modal">
+        <form action="/submitAddress" method="post">
+			<div class="form-header">
+				<h2>Enter new address</h2>
+				<span class="cancel">&#10006;</span>
 			</div>
-			
-			<div class="section-item2">
-				<h1>Addresses</h1>
-				<div class="item">
-					<h3>&#43 <a>Add new address</a></h5>
-					
-				</div>
-				<div class="item adresses">
-					<h3>Username</h3>
-					<p>123, First Address Street, Brampton, ON, L9B 6Y8</p>
-					<div>
-						<a>Edit</a> | <a>Remove</a>
-					</div>
-					
-				</div>
-				<div class="item adresses">
-					<h3>Username</h3>
-					<p>456, Second Address Street, Toronto, ON, L6A 7J9</p>
-					<div>
-						<a>Edit</a> | <a>Remove</a>
-					</div>
-					
-				</div>
-			</div>
-			
-		</section>
-		<hr>
-		<footer th:include="fragments/general.html :: footer"></footer>	
-	</div>
-	<script th:src="@{/Script/dropdown.js}"></script>
+		   <label>First Name* :</label>
+		   <input type="text" name="firstname" id="firstname" required>
+		   <label>Last Name* :</label>
+		   <input type="text" name="lastname" id="lastname" required>
+		   <label>Phone Number* :</label>
+		   <input type="number" name="phonenumber" id="phonenumber" required>
+		   <label>Street Address* :</label>
+           <input type="text" name="streetaddress" id="streetaddress" required>
+            <label>APT/ Unit No :</label>
+           <input type="text" name="unitno" id="unitno" required>
+           <label>City* :</label>
+           <input type="text" name="city" id="city" required>
+           <label>Province* :</label>
+           <input type="text" name="province" id="province" required>
+           <label>Postal code* :</label>
+           <input type="text" name="postalcode" id="postcode" required>
+           <label>Country* :</label>
+           <select>
+			   <option>Select your country</option>
+			   <option>Canada</option>
+		   </select>
+		   <br>
+		   <div class="form-button">
+			    <input type="submit" value="SAVE ADDRESS" class="item-btn">
+			     <input type="button" value="CANCEL" class="item-btn cancel">
+		   </div>
+		  
+        </form>
+    </div>
+    <div class="overlay hidden cancel"></div>
+    <footer th:include="fragments/general.html :: footer"></footer>
+</div>
+<script th:src="@{/Script/dropdown.js}"></script>
+<script th:src="@{/Script/modal.js}"></script>
+
 </body>
 </html>
