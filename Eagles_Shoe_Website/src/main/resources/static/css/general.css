@@ -45,7 +45,6 @@ header{
 {
 	 display:flex;
 	 justify-content: space-evenly;
-	 
 	 align-items: center;
 }
 .headerGrandItem1{
@@ -54,6 +53,7 @@ header{
 	 grid-template-columns: 14% repeat(5,12%) ;
 	 align-items: center;
 	 padding:10px;
+	 padding-bottom:0px;
 	 margin-left:25%;
 	
  }
@@ -79,6 +79,7 @@ header{
 	grid-template-columns:210px repeat(3,60px);
 	 align-items: center;
 	 padding-right: 20px;
+	 z-index: 2;
 	
  }
  .women-dropdown, .men-dropdown, .boys-dropdown, .girls-dropdown,.sales-dropdown,.sport-dropdown{
@@ -88,6 +89,7 @@ header{
     background-color: white;
      border:2px solid silver;
     color:black;
+    margin-top:-4px;
     
  }
  .women-dropdown a, .men-dropdown a, .sport-dropdown a, .sales-dropdown a{
@@ -267,5 +269,6 @@ header{
 	flex-direction: row;
 }
 .women-dropdown, .men-dropdown, .boys-dropdown, .girls-dropdown,.sales-dropdown,.sport-dropdown{
-	display: none;
+    display: none;  
+  
 }
