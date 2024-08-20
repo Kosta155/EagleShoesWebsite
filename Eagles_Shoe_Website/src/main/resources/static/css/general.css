@@ -38,8 +38,11 @@ header{
 }
 
 .headerItem2{
+	grid-row-gap: -22px;
 	display:grid;
 	grid-template-columns: 25% 40% 35%;
+	grid-template-rows: auto auto;
+
 }
 .headerGrandItem0
 {
@@ -53,7 +56,6 @@ header{
 	 grid-template-columns: 14% repeat(5,12%) ;
 	 align-items: center;
 	 padding:10px;
-	 padding-bottom:0px;
 	 margin-left:25%;
 	
  }
@@ -129,18 +131,17 @@ header{
 	 
 	 
  }
+ 
+ .fa-user:hover{
+	 background-color: grey;
+ }
  .content1 h3:hover{
 	 color:rgba(0,0,0,1)
  }
  .content p:hover{
 	 text-decoration: underline;
  }
- .point{
-	 position: absolute;
-	bottom:-25px;
-	 right:2%;
-	 display: none;
- }
+ 
  .boys-dropdown, .girls-dropdown{
 	 height: 500px;
  }
@@ -151,34 +152,37 @@ header{
 	  height: 300px;
  }
  .profile-dropdown{
-	 background-color: white; 
-	 height:150px;
-	 width:150px;
-	 position: relative;
-	 left:90%;
-	 display: grid;
+	 grid-column-start: 3;
+	 background-color: black; 
+	 color: white;
+	 height:70px;
+     display: none;
 	 grid-template-rows: 1fr 1fr;
-	 display: none;
-	 border:1px solid black;
-	 z-index: 1;
-	
+	 border:1px solid white;
+	 z-index: 5;
+	 justify-self: end;
+	 margin-right: 4px;
+	 margin-top: -20px;
+	 border-radius: 7%;
  }
  #sales{
 	 color:red;
  }
  .profile-dropdown p{
-	 color:black;
-	 border-bottom:1px solid #333333;
+	 grid-column-start:2;
+	 color:white;
+	 border-bottom:1px solid silver;
 	 width:100%;
 	 text-align: center;
-	 padding:30px 10px;
+	 padding:10px 11px;
 	 font-weight: bold;
-	 
+	 font-size: 12px;
 	 
  }
  .profile-dropdown p:hover{
-	 border-bottom:3px solid silver;
-	 color: silver;
+	 font-weight: bolder;
+	 font-size: 14px;
+	 color: white;
 	 text-decoration: none;
  }
  input{
@@ -272,3 +276,4 @@ header{
     display: none;  
   
 }
+

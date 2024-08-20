@@ -110,21 +110,28 @@ const elements = document.querySelectorAll(".dropdown");
 
 		
 		
-const profile = document.querySelector(".fa-user");
+const profile = document.querySelector("#profile");
 profile.addEventListener("mouseover", function() {
     const e = document.querySelector(".profile-dropdown");
-     const e2 = document.querySelector(".point");
-    e.style.display = "block";
-    e2.style.display = "block";
-    e.style.height = "160px";
-    e.style.width = "160px";
+    e.style.display = "grid";
+    e.style.width = "120px";
 });
-const profile2 = document.querySelector(".profile-dropdown");
-profile2.addEventListener("mouseout", function() {
+profile.addEventListener("mouseout", function() {
     const e = document.querySelector(".profile-dropdown");
-     const e2 = document.querySelector(".point");
-    e.style.display = "none";
-    e2.style.display = "none";
+    e.style.display = "none";    
+});
+
+
+const dropdownprofile = document.querySelector(".profile-dropdown");
+dropdownprofile.addEventListener("mouseover", function() {
+    const e = document.querySelector(".profile-dropdown");
+    e.style.display = "grid";
+
+});
+
+dropdownprofile.addEventListener("mouseout", function() {
+    const e = document.querySelector(".profile-dropdown");
+    e.style.display = "none";    
 });
 
 
