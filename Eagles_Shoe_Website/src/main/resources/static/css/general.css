@@ -1,9 +1,15 @@
 @charset "ISO-8859-1";
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+body{
+	        font-family: 'Poppins', sans-serif;
+
+}
+
 
 .text{
 	width:200px;
@@ -26,15 +32,17 @@ header{
 	background-color: black;
 	color:white;
 	width:100%;
-	 position: relative;
+	position: relative;
 	
 }
 .headerItem1{
 	display:grid;
 	justify-content: center;
 	padding-top: 10px;
-	background-color: #848484;
+	background-image: url("https://img.freepik.com/free-vector/set-basic-doodle-arrows_78370-1785.jpg?size=626&ext=jpg&uid=R113643224&ga=GA1.1.1824738532.1700614501&semt=ais");
+	background-size: cover;
 	grid-template-columns: auto auto;
+	 font-size:15px;
 }
 
 .headerItem2{
@@ -49,6 +57,7 @@ header{
 	 display:flex;
 	 justify-content: space-evenly;
 	 align-items: center;
+	 font-size:15px;
 }
 .headerGrandItem1{
 	 display:grid;
@@ -61,7 +70,7 @@ header{
  }
 
  .headerGrandItem1 h6{
-	 font-size:17px;
+	 font-size:14px;
 	  height:70px;
 	  text-align: center;
 	  padding-top:20px;
@@ -86,7 +95,7 @@ header{
  }
  .women-dropdown, .men-dropdown, .boys-dropdown, .girls-dropdown,.sales-dropdown,.sport-dropdown{
 	 width: 100%;
-    height: 350px;
+    height: 450px;
     z-index: 1;
     background-color: white;
      border:2px solid silver;
@@ -94,13 +103,13 @@ header{
     margin-top:-4px;
     
  }
- .women-dropdown a, .men-dropdown a, .sport-dropdown a, .sales-dropdown a{
+ .women-dropdown a, .men-dropdown a, .sport-dropdown a, .sales-dropdown a, .boys-dropdown a,.girls-dropdown a{
 	 font-size: inherit;
 	 color: inherit;
 	 text-decoration: none;
  }
  
- .women-dropdown, .men-dropdown, .sport-dropdown, .sales-dropdown{
+ .women-dropdown, .men-dropdown, .sport-dropdown, .sales-dropdown, .boys-dropdown,.girls-dropdown{
 	 color:black;
 	 display:flex;
 	 justify-content: space-between;
@@ -276,4 +285,7 @@ header{
     display: none;  
   
 }
+
+
+
 

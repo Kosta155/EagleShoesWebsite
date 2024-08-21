@@ -1,8 +1,8 @@
+```html
 <!DOCTYPE html>
-<html xmnls:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 <link rel="stylesheet" th:href="@{/css/index.css}">
@@ -10,7 +10,9 @@
 <link rel="stylesheet" th:href="@{/css/profile.css}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" th:href="@{/css/modal.css}">
+
 <style>
+	
 	.section-item2{
 		display: flex;
 		flex-direction: column;
@@ -19,37 +21,28 @@
 	.item{
 		margin-left:5%;
 	}
-	.hidden{display:block;}
-	 .modal {
-		  
-		  transform: translate(-50%, 20%);
-		 height:65%;
-		 
-}
-
+	
 #check-label label{padding-left:0px;  font-size: 15px; font-weight: bold;}
 
-.small-input{
-	
-}
 section{padding:10px 25px}
 
 form {
-    width: 800px;
+    width: 550px;
 }
-input[type="radio"]
-{
-	border:2px solid green;
-	height: 15px;
-	padding-right: 0px;
-	width: 20px;
-}
+
 .form-button{
 	display: flex;
-	
 	flex-direction: row;
 	justify-content: space-around;
 }
+
+.form-info{
+	display: grid;
+	grid-template-columns:1fr 1fr;
+	margin-bottom: 10px;
+	padding-right: 15px;
+}
+
 .item-btn{
 	border: 2px solid black;
     background-color: black;
@@ -73,13 +66,12 @@ input[type="radio"]
 	align-items: end;
 	font-size: 40px;
 }
-.items{
-	
+.form-number{
+	display: grid;
+	grid-template-columns:1fr 0.5fr;
+	column-gap:10%;
 }
-.items input{
-	width:50px;
-	
-}
+
 </style>
 
 </head>
@@ -93,7 +85,7 @@ input[type="radio"]
 				<h1>Account Overview</h1>
 				<div class="section-item-buttons">
 					<a th:href="@{/home/profilePage}">
-						<button >Personal Information <span>&#10230</span></button>
+						<button>Personal Information <span>&#10230</span></button>
 					</a>
 				    <a th:href="@{/home/addressPage}">
 						<button>Addresses <span>&#10230</span></button>
@@ -116,55 +108,74 @@ input[type="radio"]
 			<div class="section-item2">
 				<h1>Payment</h1>
 				<div class="item">
-					<h3 id="add">&#43 <a>Add new payment method</a></h5>
+					<h3 id="add">&#43 <a>Add new payment method</a></h3>
 				</div>
 				<img th:src="@{https://www.shutterstock.com/image-vector/credit-card-icon-vector-600nw-1377527150.jpg}" 
 				style="width:410px; margin-left: 50px;">
-				
-			
 		</section>
-		<hr>
+		
 		 <div class="hidden modal">
         <form action="/submitAddress" method="post">
 			<div class="form-header">
-				<h2>Enter new payment information</h2>
+				<h2>Enter Card information:</h2>
 				<span class="cancel">&#10006;</span>
 			</div>
-		   <label>Card Holder</label>
-		   <input type="text" name="name" id="name" required>
-		   <label>Card Number</label>
-		    <input type="number" name="cardNumber" id="cardNumber" required>
-		   
-		   <section id="card-date">
-		    <div class="items">
-			   <label>Expr Month*</label>
-			   <input type="number" name="exprMonth" id="exprmonth" class="small-input" required>
+			
+			<div class="form-body">
+				<div class="form-info">
+				<div>
+					<label>First Name :</label>
+		           <input type="text" name="firstName" id="firstName" required>
+				</div>
+				
+				<div>
+					<label>Last Name :</label>
+          			 <input type="text" name="lastName" id="lastName" required>
+					
+				</div>
 			</div>
-		  
-		   <span>/</span>
-		   <div class="items">
-			   <label>Expr Year*</label>
-           		<input type="number" name="exprYear" id="exprYear" class="small-input" required >
-		   </div>
-		   
-		   </section>
-		   
-            <label>CVC*</label>
-           <input type="number" name="cvc" id="cvc" required>
-           <section id="check-label">
-			   <input type="radio" name="defaultpayment" id="defaultpayment" >
-           	  <label > Set as default payment method</label>
-		   </section>
+			
+			<div class="form-info">
+				<div>
+					<label>Card Number:</label>
+		           <input type="number" name="cardNumber" id="cardNumber" required>
+				</div>
+				
+				<div>
+					<label>CVV:</label>
+          			 <input type="number" name="cvc" id="cvV" style="width:200px" required>
+					
+				</div>
+			</div>
+			
+			
+			<div class="form-info">
+				<div>
+					<label>Exp Month:</label>
+		           <input type="number" name="cardNumber" id="cardNumber" style="width:200px" required>
+				</div>
+				
+				<div>
+					<label>Exp Year:</label>
+          			 <input type="number" name="cvc" id="cvV" style="width:200px" required>
+					
+				</div>
+			</div>
+		
+				
+			
+          
            
-           <br>
+           
 		   <div class="form-button">
-			    <input type="submit" value="SAVE &#10230;" class="item-btn">
-			     <input type="button" value="CANCEL &#10230;" class="item-btn cancel">
+			    <input type="submit" value="Save" class="item-btn">
+			     <input type="button" value="CANCEL" class="item-btn cancel">
 		   </div>
-		  
+	
+			</div>
         </form>
     </div>
-		<hr>
+	
 		<div class="overlay hidden cancel"></div>
 		<footer th:include="fragments/general.html :: footer"></footer>	
 	</div>
@@ -172,3 +183,4 @@ input[type="radio"]
 	<script th:src="@{/Script/modal.js}"></script>
 </body>
 </html>
+```

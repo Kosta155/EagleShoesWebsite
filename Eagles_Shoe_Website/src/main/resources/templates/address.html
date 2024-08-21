@@ -8,6 +8,7 @@
     <link rel="stylesheet" th:href="@{/css/general.css}">
     <link rel="stylesheet" th:href="@{/css/profile.css}">
     <link rel="stylesheet" th:href="@{/css/modal.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
 	    </style>
@@ -67,13 +68,7 @@
 				<h2>Enter new address</h2>
 				<span class="cancel">&#10006;</span>
 			</div>
-		   <label>First Name* :</label>
-		   <input type="text" name="firstname" id="firstname" required>
-		   <label>Last Name* :</label>
-		   <input type="text" name="lastname" id="lastname" required>
-		   <label>Phone Number* :</label>
-		   <input type="number" name="phonenumber" id="phonenumber" required>
-		   <label>Street Address* :</label>
+			<label>Street Address* :</label>
            <input type="text" name="streetaddress" id="streetaddress" required>
             <label>APT/ Unit No :</label>
            <input type="text" name="unitno" id="unitno" required>
@@ -91,7 +86,7 @@
 		   <br>
 		   <div class="form-button">
 			    <input type="submit" value="SAVE ADDRESS" class="item-btn">
-			     <input type="button" value="CANCEL" class="item-btn cancel">
+			     <input type="button" value="CANCEL" class="item-btn cancel cancel1">
 		   </div>
 		  
         </form>
@@ -100,7 +95,9 @@
     <footer th:include="fragments/general.html :: footer"></footer>
 </div>
 <script th:src="@{/Script/dropdown.js}"></script>
-<script th:src="@{/Script/modal.js}"></script>
+
+	<script th:src="@{/Script/modal.js}"></script>
+
 
 </body>
 </html>
