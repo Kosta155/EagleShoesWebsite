@@ -17,7 +17,7 @@ import lombok.AllArgsConstructor;
 public class Shoe_Controller {
 	
 	private ShoeRepository shoeRepo;
-	
+	//Root Page
 	@GetMapping("/")
 	public String getRootPage(Model model)
 	{
