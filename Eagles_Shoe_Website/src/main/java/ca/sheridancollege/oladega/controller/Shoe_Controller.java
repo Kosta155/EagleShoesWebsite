@@ -28,6 +28,7 @@ public class Shoe_Controller {
 		model.addAttribute("shoes",shoes);
 		return "index.html";
 	}
+	//cart page controller
 	@GetMapping("/home/cartPage")
 	public String getCartPage()
 	{
