@@ -110,37 +110,4 @@ const elements = document.querySelectorAll(".dropdown");
 
 		
 		
-const profile = document.querySelector("#profile");
-profile.addEventListener("mouseover", function() {
-    const e = document.querySelector(".profile-dropdown");
-    e.style.display = "grid";
-    e.style.width = "120px";
-});
-profile.addEventListener("mouseout", function() {
-    const e = document.querySelector(".profile-dropdown");
-    e.style.display = "none";    
-});
-
-
-const dropdownprofile = document.querySelector(".profile-dropdown");
-dropdownprofile.addEventListener("mouseover", function() {
-    const e = document.querySelector(".profile-dropdown");
-    e.style.display = "grid";
-
-});
-
-dropdownprofile.addEventListener("mouseout", function() {
-    const e = document.querySelector(".profile-dropdown");
-    e.style.display = "none";    
-});
-
-
-
-/**
- * 
- * profile.addEventListener("mouseout", function() {
-    const e = document.querySelector(".profile-dropdown");
-    e.style.display = "none";
-});
- */
  
