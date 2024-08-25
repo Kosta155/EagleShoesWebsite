@@ -62,6 +62,8 @@ public class SecurityConfig {
 				.requestMatchers(antMatcher("/delete/**")).hasRole("ADMIN")
 				.requestMatchers(antMatcher("/h2-console/**")).permitAll()
 				.requestMatchers(antMatcher("/")).permitAll()
+				.requestMatchers(antMatcher("/home/profilePage")).hasAnyRole("ADMIN","MEMBER")
+				.requestMatchers(antMatcher("/home/wishListPage")).hasAnyRole("ADMIN","MEMBER")
 				.requestMatchers(antMatcher("/home/**")).permitAll()
 				.requestMatchers(antMatcher("/Script/**")).permitAll()
 				.requestMatchers(antMatcher("/getFavorites")).permitAll()
