@@ -33,6 +33,7 @@ public class SecurityController {
 	@GetMapping("/home/registrationPage")
 	public String registrationPage()
 	{
+		
 		return "Registration.html";
 	}
 	

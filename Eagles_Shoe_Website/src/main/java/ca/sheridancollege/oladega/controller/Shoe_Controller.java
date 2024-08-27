@@ -1,5 +1,6 @@
 package ca.sheridancollege.oladega.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.security.core.Authentication;
@@ -9,6 +10,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import ca.sheridancollege.oladega.beans.Shoe;
+import ca.sheridancollege.oladega.beans.User;
+import ca.sheridancollege.oladega.beans.Address;
+
+import ca.sheridancollege.oladega.repristory.SecurityReprisotory;
 import ca.sheridancollege.oladega.repristory.ShoeRepository;
 import lombok.AllArgsConstructor;
 
@@ -17,6 +22,8 @@ import lombok.AllArgsConstructor;
 public class Shoe_Controller {
 	
 	private ShoeRepository shoeRepo;
+	private SecurityReprisotory secRepo;
+
 	//Root Page
 	@GetMapping("/")
 	public String getRootPage(Model model)
@@ -45,8 +52,18 @@ public class Shoe_Controller {
 		return "wishList.html";
 	}
 	@GetMapping("/home/profilePage")
-	public String getprofilePage()
+	public String getprofilePage(Model model)
 	{
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+	    String username = authentication.getName();
+		User user = secRepo.findUserByEmail(username);
+		List <Address> address = new ArrayList<>();
+		address = secRepo.getAddressesByEmail(username);
+	    if(address != null)
+	    {
+		model.addAttribute("address",address.get(0));
+	    }
+		model.addAttribute("user" ,user);
 		return "profilePage.html";
 	}
 	@GetMapping("/home/addressPage")

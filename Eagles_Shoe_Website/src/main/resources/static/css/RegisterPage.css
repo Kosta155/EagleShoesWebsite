@@ -5,6 +5,11 @@
     padding: 0;
     box-sizing: border-box;
 }
+#submitBtn:disabled {
+    background-color: #ccc; /* Gray background for disabled state */
+    color: #666;            /* Lighter text color */
+    cursor: not-allowed;    /* Change cursor to indicate the button is not clickable */
+}
 
 body {
    

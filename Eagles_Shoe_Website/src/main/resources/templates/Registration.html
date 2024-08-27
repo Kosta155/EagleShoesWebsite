@@ -25,7 +25,7 @@
 			        <form method="post" th:action="@{/register}">
 			
 			            <div class="sign">
-			                <a th:href="@{/home/registrationPage}"  >
+			                <a th:href="@{/home/registrationPage}">
 			                    <p>	
 			                        <strong>Sign-Up</strong>
 			                    </p>
@@ -48,28 +48,31 @@
 				 	    <br>
 			            <br>
 			          
-			            <input type="password" id="password" name="password" placeholder="Password*">
+			            <input type="password" id="password" name="password" placeholder="Password*" onkeyup="checkPassword()">
 			            <br>
 			            <br>
-			            <input type="password" id="password2" name="password2" placeholder="Confirm Password*">
+			            <div th:if="${annouce}" class="error-message">
+           						 <p th:text="${annouce}"></p>
+        				</div>
+			            <span id="error"></span>
+			            <input type="password" id="password2" name="password2"  placeholder="Confirm Password*" onkeyup="checkPassword()">
 			            <br>
 			            <br>
 			            
-			            <section>
+			            <section></section>
 							 <input type="checkbox" id="via" name="via">
 							 <label>
 								I want to receive special offers and other information from Eagle's store via email
 							</label>
-
 						</section>
 			            
 						<br>
 			            <br>
 			            <section>
-							<input type="checkbox" id="terms" name="terms">
+							<input type="checkbox" id="terms" required name="terms">
 			            <label for="terms">
 						    I acknowledge and agree to the following: 
-						    <a thhref="#">Privacy Policy</a> |<a href="#"> Terms and Conditions</a> 
+						    <a href="#">Privacy Policy</a> <a href="#"> Terms and Conditions</a> 
 						</label>
 						</section>
 			            
@@ -80,7 +83,7 @@
 						<br>
 						<br>
 						
-			            <input type="submit" value="Register as Member" class="btn11">
+			            <input type="submit" id="submitBtn" value="Register as Member" class="btn11" disabled>
 			        </form>
     			</div>
 			</div>
@@ -89,8 +92,28 @@
 		
 		
 	</div>
-	
+	<script>
+        function checkPassword() {
+            const password1 = document.getElementById('password').value;
+            const password2 = document.getElementById('password2').value;
+            const submitButton = document.getElementById('submitBtn');
+            const errorSpan = document.querySelector("#error");
 
-	
-</body>
+            if (password1 === password2 && password1 !== "") {
+                submitButton.disabled = false;
+                errorSpan.innerHTML = "";  // Clear error message when passwords match
+            } else {
+				if (password2 !== "") {
+				  errorSpan.innerHTML = "Passwords do not match!";
+				}
+				else{
+					errorSpan.innerHTML = ""
+				}
+				submitButton.disabled = true;
+            }
+        }
+    </script>
+
+
+	</body>
 </html>
