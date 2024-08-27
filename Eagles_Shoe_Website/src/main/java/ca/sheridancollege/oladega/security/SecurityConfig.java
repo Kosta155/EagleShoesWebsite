@@ -64,6 +64,7 @@ public class SecurityConfig {
 				.requestMatchers(antMatcher("/")).permitAll()
 				.requestMatchers(antMatcher("/home/profilePage")).hasAnyRole("ADMIN","MEMBER")
 				.requestMatchers(antMatcher("/home/wishListPage")).hasAnyRole("ADMIN","MEMBER")
+				.requestMatchers(antMatcher("/images/**")).hasAnyRole("ADMIN","MEMBER")
 				.requestMatchers(antMatcher("/home/**")).permitAll()
 				.requestMatchers(antMatcher("/Script/**")).permitAll()
 				.requestMatchers(antMatcher("/getFavorites")).permitAll()
