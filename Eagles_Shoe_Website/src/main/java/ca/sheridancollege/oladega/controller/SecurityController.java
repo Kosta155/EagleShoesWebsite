@@ -46,7 +46,6 @@ public class SecurityController {
 			)
 	{
 		User checkUser = secRepo.findUserByEmail(email);
-		System.out.print(checkUser)	;
 		if(checkUser != null)
 		{
 			model.addAttribute("annouce","This user already exist.");
