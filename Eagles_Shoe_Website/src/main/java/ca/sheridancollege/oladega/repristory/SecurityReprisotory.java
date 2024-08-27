@@ -36,8 +36,8 @@ public class SecurityReprisotory {
 	
 	public List<Address> getAddressesByEmail(String email){
 		MapSqlParameterSource parameters = new MapSqlParameterSource();
-		String query = "SELECT * from address WHERE email=:email)";
-		parameters.addValue("email", email);
+		String query = "SELECT * from address WHERE email=:user";
+		parameters.addValue("user", email);
 		List<Address> addressList = jdbc.query(query,parameters, new BeanPropertyRowMapper<>(Address.class));
 		if(addressList.size()>0)
 		{

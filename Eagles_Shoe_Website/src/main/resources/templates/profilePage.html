@@ -41,17 +41,16 @@
 					</a>
 				</div>
 			</div>
-			
 			<div class="section-item2">
 				<div class="item contact-info">
 					<h2>Contact Information</h2>
-					<p>Username</p>
-					<p>Postalcode</p>
+					<p th:text="${user.username}"></p>
+					<p th:if="${address}" th:text="${address.postalCode}"></p>
 					<a>Edit</a>
 				</div>
 				<div class="item email-info">
 					<h2>Email</h2>
-					<p>example@gmail.com</p>
+					<p th:text="${user.email}"></p>
 					<a>Edit</a>
 				</div>
 				<div class="item password-info">
@@ -72,7 +71,6 @@
 					<a th:href="@{/logout}">
 						<button>DELETE MY ACCOUNT <span>&#10230</span></button>
 					</a>
-					
 					
 				</div>
 			</div>

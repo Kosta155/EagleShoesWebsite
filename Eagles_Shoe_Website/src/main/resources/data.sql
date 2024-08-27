@@ -5,7 +5,7 @@ INSERT INTO members (email,username, encryptedPassword, "ENABLED")
 VALUES ('kostikanini@example.com','kostikas', '$2a$10$d8r8Z4P6A6jCTnmiYge.TecGJxZYcd6zkjCfXCDWBbGbDL8EHG7Ay', true);
 
 INSERT INTO address (street, city, province,country,postalCode , email)
-VALUES ('234 Wildgrass Rd','Mississauga','Ontario','Canada','L5B4H8','kostikanini@example.com');
+VALUES ('234 Wildgrass Rd','Mississauga','Ontario','Canada','L5B4H8','kostika@example.com');
 
 INSERT INTO orders ( orderTime, email, addressId)
 VALUES ( '2024-01-06 12:30:00', 'kostikanini@example.com', 1);
