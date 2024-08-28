@@ -331,6 +331,8 @@ footer {
     z-index: 10;
     font-family: 'Poppins', sans-serif;
     display: grid;
+    row-gap:1%;
+    grid-template-rows: 17% 82%;
     width: 100%;
     height: 40rem;
     font-size: 24px;
@@ -354,7 +356,8 @@ footer {
 
 .modal-search {
     background-color: rgb(242, 242, 242);
-    height: 28%;
+    
+    
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -376,7 +379,7 @@ footer {
 #bigSerch {
     border-radius: 0px;
     height: 70%;
-    width: 95.5%;
+    width: 97%;
     background-color: white;
     font-size: 20px;
     color: black;
@@ -388,14 +391,69 @@ footer {
     color: black;
     align-self: center;
     justify-self: center;
+    font-weight: bold;
 }
 
 .search-box-icon:hover {
-    color: rgb(128, 128, 0);
-    font-weight: bold;
-    font-size: 23px;
+    color: silver;
+    
+}
+#empty{justify-self: end;}
+
+
+.modal-content
+{
+	color:black;
+	display: flex;
+	justify-content: space-around;
+	padding-top:20px;
+	
+	
+}
+.modal-content-img
+{
+	width:120px;
+	border:1px solid silver;
+	background: silver;
+}
+.modal-content-text h5,.modal-content-text p
+{
+	font-size:17px;
+}
+.modal-content-text 
+{
+	display: flex;
+	flex-direction: column;
+	gap:5px;
+	justify-content: center;
+	height: 100%;
 }
 
-.hidden1 {
-    display: none;
+.modal-content-item h4{
+	padding-bottom: 20px;
+	font-size: 20px;
+}
+.modal-content-item p
+{
+	padding-bottom: 10px;
+	font-size: 18px;
+	
+}
+.modal-content-item2
+{
+	width:50%;
+}
+
+.SuggestedShoes
+{
+	display:grid;
+	grid-template-columns: auto auto;
+	row-gap: 10%;
+}
+.shoeSearched{
+	display:flex;
+	gap:3%;
+}
+.hidden1{
+	display:none;
 }
