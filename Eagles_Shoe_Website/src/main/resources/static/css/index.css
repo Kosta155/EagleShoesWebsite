@@ -10,11 +10,21 @@
 .section1 {
     height: 900px;
     background-size: cover;
-    background-image: url("https://img.freepik.com/premium-photo/seamless-nike-sneaker-customization-integration_1036975-159711.jpg");
+    background-image: url("https://c0.wallpaperflare.com/preview/1007/778/354/blur-brand-depth-of-field-fashion.jpg");
     background-position-y: 100%;
     display: grid;
     grid-template-columns: 40% 57%;
     column-gap: 3%;
+     animation: changeBackground 60s ease-in infinite;
+}
+@keyframes changeBackground {
+    0% {
+        background-image: url("https://c0.wallpaperflare.com/preview/1007/778/354/blur-brand-depth-of-field-fashion.jpg");
+    }
+    70% {
+        background-image: url("https://c0.wallpaperflare.com/preview/598/980/47/person-standing-in-front-of-nike-soccer-ball.jpg");
+    }
+    
 }
 
 .section1-button {
