@@ -45,20 +45,14 @@
             <div class="item">
                 <h3 id="add">&#43;<a>Add new address</a></h3>
             </div>
-            <div class="item adresses">
-                <h3>Username</h3>
-                <p>123, First Address Street, Brampton, ON, L9B 6Y8</p>
+            <div th:each="address : ${addresses}" class="item adresses">
+                <h3 th:text="${address.email}" ></h3>
+                <p th:text="${address.street} + ', ' + ${address.city} + ', ' +  ${address.province} + ', ' + ${address.postalCode}"></p>
                 <div>
                     <a>Edit</a> | <a>Remove</a>
                 </div>
             </div>
-            <div class="item adresses">
-                <h3>Username</h3>
-                <p>456, Second Address Street, Toronto, ON, L6A 7J9</p>
-                <div>
-                    <a>Edit</a> | <a>Remove</a>
-                </div>
-            </div>
+           
         </div>
     </section>
     
