@@ -8,6 +8,8 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import ca.sheridancollege.oladega.beans.Shoe;
 import ca.sheridancollege.oladega.beans.User;
@@ -67,8 +69,14 @@ public class Shoe_Controller {
 		return "profilePage.html";
 	}
 	@GetMapping("/home/addressPage")
-	public String getAddressPage()
+	public String getAddressPage(Model model)
 	{
+		
+		List <Address> address = new ArrayList<>();
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+	    String username = authentication.getName();
+		address = secRepo.getAddressesByEmail(username);
+	    model.addAttribute("addresses",address);
 		return "address.html";
 	}
 	@GetMapping("/home/orderHistory")
@@ -81,6 +89,8 @@ public class Shoe_Controller {
 	{
 		return "paymentPage.html";
 	}
+	
+	
 	
 	
 }
