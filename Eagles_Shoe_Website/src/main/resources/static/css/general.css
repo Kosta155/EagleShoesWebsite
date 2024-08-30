@@ -97,7 +97,7 @@ header {
     color: black;
     margin-top: -10px;
     animation-name: fadeInSlideDown2;
-     animation-duration: 1s;
+     animation-duration: 0.5s;
     animation-timing-function: ease-out;
 }
 @keyframes fadeInSlideDown2 {
@@ -339,7 +339,7 @@ footer {
     background-color: white;
     box-shadow: 0 3rem 15rem white;
     animation-name: fadeInSlideDown;
-    animation-duration: 2s;
+    animation-duration: 1s;
     animation-timing-function: ease-out;
 }
 
