@@ -9,6 +9,7 @@ const e = document.querySelector("#bigSerch");
 search.addEventListener("click", function() {
     overlay1.classList.remove("hidden1");
     modal1.classList.remove("hidden1");
+    e.focus();
     document.documentElement.style.overflow = 'hidden';
 });
 
