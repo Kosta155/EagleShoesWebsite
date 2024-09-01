@@ -16,8 +16,7 @@
 	{
 		margin-top:100px;
 		display: grid;
-		grid-template-columns: 50% 40%;
-		border:2px solid red;
+		grid-template-columns: 40% 25%;
 		justify-content: center;
 		
 	}
@@ -25,7 +24,6 @@
 	{
 		display: grid;
 		grid-template-columns: auto auto;
-		border:2px solid greenyellow;
 		column-gap: 3px;
 		
 	}
@@ -36,6 +34,7 @@
 	}
 	.columns img{
 		width:80px;
+	
 		opacity: 0.6;
 	}
 	.columns img:hover
@@ -47,6 +46,7 @@
 	{
 		width:100%;
 		height: 100%;
+		border-radius:10px;
 	}
 	.containerSlide
 	{
@@ -101,14 +101,54 @@
 	.size-options{
 		display: grid;
 		grid-template-columns: auto auto auto;
+		gap:10px;
 		
 	}
 	.size-options p{
-		border:1px solid black;
+		border:1px solid silver;
+		padding:10px;
+		text-align: center;
 	
 	}
+	.controls-selected-shoe{
+		display: flex;
+		flex-direction: column;
+		align-items: start;
+		row-gap: 15px;
+	}
+	.controls 
+	{
+		width:300px;
+		text-align: center ;
+		padding:20px;
+		border-radius: 33px;
+		cursor: pointer;
+	}
+	.addToCart
+	{
+		background-color: black;
+		color:white;
+		border:none;
+		font-weight: bold;
+		font-size: 15px;
+	}
 	
-	
+	.addToFavourite
+	{
+		background-color: white;
+		color:black;
+		border:2px solid black;
+		font-weight: bold;
+		font-size: 15px;
+	}
+	hr{
+		margin-top: 10px;
+		border:0.5px solid silver;
+	}
+	.section2-container
+	{
+		height:40rem;
+	}
 </style>
 <body>
 	
@@ -116,8 +156,6 @@
 		<header th:include="fragments/general.html :: header"></header>
 		
 		<section class="content-container">
-			
-			
 				<div class="selected-shoecontainer">
 					<div class="columns">
 						<img th:src="@{https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/fd5cf11b9cff43b79244011ed13f0d58_9366/Samba_OG_Shoes_Kids_White_IE8848_01_standard.jpg}">
@@ -180,10 +218,14 @@
 						</div>
 					</div>
 					
-					<div>
+					<div class="size-options-container">
 						<h4>Select SIze</h4>
+						<br>
 						<div class="size-options">
+							<p>US 7C</p>
+							<p>US 7.5C</p>
 							<p>US 8C</p>
+							<p>US 8.5C</p>
 							<p>US 9C</p>
 							<p>US 9.5C</p>
 							<p>US 10C</p>
@@ -191,21 +233,35 @@
 							<p>US 11C</p>
 							<p>US 11.5C</p>
 							<p>US 12c</p>
+							<p>US 12.5c</p>
 						</div>
 					</div>
 					
-				</div>
-			
-			
-		
+					<div class="controls-selected-shoe">
+						<button class="controls addToCart"> Add to Cart</button>
+						<button class="controls addToFavourite">Favourite</button>
+					</div>
+					
+					<div>
+						<div>
+							<a href="#">Free Standard Shipping for members</a>
+						</div>
+					</div>
+					
+				</div>	
 		</section>
 			<hr>
+		<section class="section2-container">
+			
+		</section>
+		
 		
 			
 
 		<footer th:include="fragments/general.html :: footer"></footer>
 <script th:src="@{/Script/selectedShoe.js}"></script>
 <script th:src="@{/Script/dropdown.js}"></script>	
-<script th:src="@{/Script/search.js}"></script>   
+<script th:src="@{/Script/search.js}"></script>  
+ 
 </body>
 </html>

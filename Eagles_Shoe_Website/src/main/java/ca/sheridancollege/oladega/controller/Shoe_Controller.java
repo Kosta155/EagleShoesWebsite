@@ -85,8 +85,10 @@ public class Shoe_Controller {
 		return "orderHistory.html";
 	}
 	@GetMapping("/home/selectedShoe")
-	public String getSelectedShoePage()
+	public String getSelectedShoePage(Model model)
 	{
+		List<Shoe> shoes = shoeRepo.getAllAvailableShoes();	
+		model.addAttribute("shoes",shoes);
 		return "selectedShoe.html";
 	}
 	@GetMapping("/home/paymentPage")
