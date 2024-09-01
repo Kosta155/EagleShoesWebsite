@@ -161,13 +161,14 @@ button:hover {
 	padding-bottom: 20px;
 	
 }
-.container-featured-shoes {
+.container-featured-shoes #demo {
   display: grid;
   grid-auto-flow:column;
   grid-auto-columns: 18%;
   gap: var(--size-3);
   overflow-x: auto;
   overflow-y: hidden;
+  color:black;
   /* Remove duplicate justify-content */
   justify-content: start;
   column-gap: 1%;

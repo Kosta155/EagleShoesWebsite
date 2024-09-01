@@ -84,6 +84,11 @@ public class Shoe_Controller {
 	{
 		return "orderHistory.html";
 	}
+	@GetMapping("/home/selectedShoe")
+	public String getSelectedShoePage()
+	{
+		return "selectedShoe.html";
+	}
 	@GetMapping("/home/paymentPage")
 	public String getpaymentPage()
 	{

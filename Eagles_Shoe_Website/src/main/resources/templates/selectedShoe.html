@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html xmnls:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<link rel="stylesheet" th:href="@{/css/general.css}">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
+</head>
+<style>
+	.content-container
+	{
+		margin-top:100px;
+		display: grid;
+		grid-template-columns: 50% 40%;
+		border:2px solid red;
+		justify-content: center;
+		
+	}
+	.selected-shoecontainer
+	{
+		display: grid;
+		grid-template-columns: auto auto;
+		border:2px solid greenyellow;
+		column-gap: 3px;
+		
+	}
+	.columns{
+		display: flex;
+		flex-direction: column;
+		gap:10px; 
+	}
+	.columns img{
+		width:80px;
+		opacity: 0.6;
+	}
+	.columns img:hover
+	{
+		opacity: 1;
+	}
+	
+	.Slide-Images img
+	{
+		width:100%;
+		height: 100%;
+	}
+	.containerSlide
+	{
+		position: relative;
+	}
+	
+	.hidden{
+		display:none
+	}
+	.slideControl
+	{
+		position: absolute;
+		cursor: pointer;
+		padding:20px;
+		font-size: 25px;
+		top:40%;
+		background: transparent;
+		border:none;
+		transform: translateY(-50%);
+		border-radius: 50%;
+	}
+	.slideControl:hover
+	{
+		background: gainsboro;
+	}
+	.prev
+	{
+		left:0px;
+	}
+	.next{
+		right:0px;
+	}
+	.container-description
+	{
+		display: flex;
+		flex-direction: column;
+		row-gap: 15px;
+		padding-left: 30px;
+	}
+	.colour-options
+	{
+		display:flex;
+		gap:5px;
+	}
+	.colour-options img{
+		width:80px;
+		
+	}
+	.colour-options img:hover{
+		border-bottom: 6px solid black;
+	}
+	.size-options{
+		display: grid;
+		grid-template-columns: auto auto auto;
+		
+	}
+	.size-options p{
+		border:1px solid black;
+	
+	}
+	
+	
+</style>
+<body>
+	
+	
+		<header th:include="fragments/general.html :: header"></header>
+		
+		<section class="content-container">
+			
+			
+				<div class="selected-shoecontainer">
+					<div class="columns">
+						<img th:src="@{https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/fd5cf11b9cff43b79244011ed13f0d58_9366/Samba_OG_Shoes_Kids_White_IE8848_01_standard.jpg}">
+						<img th:src="@{https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/86cd73d94f164a95849a480e0492a480_9366/Samba_OG_Shoes_Kids_White_IE8848_02_standard_hover.jpg}">
+						<img th:src="@{https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/679a1541b1a244c1aad39f3da19845ae_9366/Samba_OG_Shoes_Kids_White_IE8848_03_standard.jpg}">
+						<img th:src="@{https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/0f179e1a58d84657990a618137fc57bc_9366/Samba_OG_Shoes_Kids_White_IE8848_04_standard.jpg}">
+						<img th:src="@{https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/c5956b071b7f4b1991d4f7b1f813c443_9366/Samba_OG_Shoes_Kids_White_IE8848_05_standard.jpg}">
+						<img th:src="@{https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/ab0ca269a80f4ff0a4d74ee7cc17def3_9366/Samba_OG_Shoes_Kids_White_IE8848_42_detail.jpg}">
+					</div>
+					<div class="containerSlide">
+						<div class="Slide-Images hidden">
+							<img th:src="@{https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/fd5cf11b9cff43b79244011ed13f0d58_9366/Samba_OG_Shoes_Kids_White_IE8848_01_standard.jpg}">
+						</div>
+						
+						<div class="Slide-Images hidden">
+							<img th:src="@{https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/86cd73d94f164a95849a480e0492a480_9366/Samba_OG_Shoes_Kids_White_IE8848_02_standard_hover.jpg}">
+						</div>
+						
+						<div class="Slide-Images hidden">
+							<img th:src="@{https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/679a1541b1a244c1aad39f3da19845ae_9366/Samba_OG_Shoes_Kids_White_IE8848_03_standard.jpg}">
+						</div>
+						
+						<div class="Slide-Images hidden">
+							<img th:src="@{https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/0f179e1a58d84657990a618137fc57bc_9366/Samba_OG_Shoes_Kids_White_IE8848_04_standard.jpg}">
+						</div>
+						
+						<div class="Slide-Images hidden" >
+							<img th:src="@{https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/c5956b071b7f4b1991d4f7b1f813c443_9366/Samba_OG_Shoes_Kids_White_IE8848_05_standard.jpg}">
+						</div>
+						
+						<div class="Slide-Images hidden">
+							<img th:src="@{https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/ab0ca269a80f4ff0a4d74ee7cc17def3_9366/Samba_OG_Shoes_Kids_White_IE8848_42_detail.jpg}">
+						</div>
+						
+						<button class="slideControl prev">&#10094;</button>
+						<button class="slideControl next">&#10095;</button>
+					</div>
+					
+					
+					
+				</div>
+					
+				
+				<div class="container-description">
+					<div class="brief-desc">
+						<h3>Samba OG Shoes Kids</h3>
+						<p>Younger Kids' Shoes</p>
+					</div>
+					<div>
+						<h4>CAD $80</h4>
+					</div>
+					
+					<div>
+						<h4>Colours</h4>
+						<br>
+						<div class="colour-options">
+							<img  th:src="@{https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/a6a1ecb378204fc6a5a3571b1a3a973e_9366/Samba_OG_Shoes_Kids_White_IE3677_01_00_standard.jpg}">
+							<img  th:src="@{https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/c67fe1e42d914f58945caeadf84f6d33_9366/Samba_OG_Shoes_Kids_Black_IE3678_01_standard.jpg}">
+							<img  th:src="@{https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/fd5cf11b9cff43b79244011ed13f0d58_9366/Samba_OG_Shoes_Kids_White_IE8848_01_standard.jpg}">
+						</div>
+					</div>
+					
+					<div>
+						<h4>Select SIze</h4>
+						<div class="size-options">
+							<p>US 8C</p>
+							<p>US 9C</p>
+							<p>US 9.5C</p>
+							<p>US 10C</p>
+							<p>US 10.5C</p>
+							<p>US 11C</p>
+							<p>US 11.5C</p>
+							<p>US 12c</p>
+						</div>
+					</div>
+					
+				</div>
+			
+			
+		
+		</section>
+			<hr>
+		
+			
+
+		<footer th:include="fragments/general.html :: footer"></footer>
+<script th:src="@{/Script/selectedShoe.js}"></script>
+<script th:src="@{/Script/dropdown.js}"></script>	
+<script th:src="@{/Script/search.js}"></script>   
+</body>
+</html>

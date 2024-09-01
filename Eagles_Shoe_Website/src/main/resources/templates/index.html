@@ -82,7 +82,9 @@
 				
 				<div class="section2-featuredKicks">
 					<h1>ALL FEATURED SHOES</h1>
+					
 					<div class="container-featured-shoes">
+					  <a th:href="@{/home/selectedShoe}" id="demo">
 						<div th:each="shoe : ${shoes}" class="container-featured-shoes-items">
                          <img th:src="${shoe.pictureURL}" width="100%" height="100%">
                          <i th:id="${shoe.shoeId}" class="fa fa-heart favourite" style='font-size:35px;'></i>
@@ -94,6 +96,7 @@
 	                         <p class="describe">3 Colors</p>
 						 </div>
                       </div>
+                      </a>
                       
 						
 					</div>
@@ -106,7 +109,7 @@
 			<div class="section3-items section3-item1">
 				<img th:src="@{https://img.buzzfeed.com/buzzfeed-static/static/2023-10/10/16/asset/f29918dace8e/sub-buzz-5423-1696953653-1.jpg}"  width="100%" height="100%">
 				<h1>EXCLUSIVE DEALS</h1>
-				<a>
+				<a >
 					<button>Shop Exclusively<span style='font-size:27px;'>&#10230</span></button>
 				</a>
 			</div>
