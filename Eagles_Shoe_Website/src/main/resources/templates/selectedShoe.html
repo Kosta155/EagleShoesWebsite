@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 </head>
 <style>
@@ -16,7 +17,7 @@
 	{
 		margin-top:100px;
 		display: grid;
-		grid-template-columns: 40% 25%;
+		grid-template-columns: 50% 25%;
 		justify-content: center;
 		
 	}
@@ -25,6 +26,7 @@
 		display: grid;
 		grid-template-columns: auto auto;
 		column-gap: 3px;
+		
 		
 	}
 	.columns{
@@ -46,7 +48,7 @@
 	{
 		width:100%;
 		height: 100%;
-		border-radius:10px;
+		
 	}
 	.containerSlide
 	{
@@ -118,7 +120,7 @@
 	}
 	.controls 
 	{
-		width:300px;
+		width:350px;
 		text-align: center ;
 		padding:20px;
 		border-radius: 33px;
@@ -132,6 +134,14 @@
 		font-weight: bold;
 		font-size: 15px;
 	}
+	.addToCart:hover{
+	
+		opacity: 0.6;
+	}
+	.addToFavourite:hover{
+	
+		opacity: 0.6;
+	}
 	
 	.addToFavourite
 	{
@@ -141,14 +151,140 @@
 		font-weight: bold;
 		font-size: 15px;
 	}
-	hr{
-		margin-top: 10px;
-		border:0.5px solid silver;
-	}
+	
 	.section2-container
 	{
-		height:40rem;
+		
+		
+		display: flex;
+		justify-content: center;
+		width:100%;
+		padding-top:50px;
+		
 	}
+	.product-details-control
+	{
+		
+		display:flex;
+		position: relative;
+		align-items: center;
+		padding: 20px 10px;
+		width:100%;
+		font-family: 'Poppins', sans-serif;
+	}
+	.all-details
+	{
+		
+		width:75%;
+	}
+	.desc-icons
+	{
+	  position: absolute;
+	  top:50%;
+	  transform: translateY(-50%);
+	  right:0px;
+	}
+	.freeShip a
+	{
+		color:black;
+		font-size:10px;
+	}
+	
+	.section3
+	{
+		margin-top:50px;
+		padding: 15px;
+		
+	}
+.shoe-desc{
+	position: absolute;
+	bottom: -5rem;
+}
+.suggested-shoes 
+	{
+	 display: grid;
+	  grid-auto-flow:column;
+	  grid-auto-columns: 18%;
+	  gap: var(--size-3);
+	  overflow-x: auto;
+	  overflow-y: hidden;
+	  color:black;
+	  justify-content: start;
+	  column-gap: 1%;
+	 overscroll-behavior-inline: contain;
+		padding-bottom: 6rem;
+		text-decoration: none;
+	}
+.suggested-shoes::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+.suggested-shoes::-webkit-scrollbar-thumb {
+  background: black; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.suggested-shoes::-webkit-scrollbar-thumb:hover {
+  background: rgba(0,0,0,0.3); 
+}
+.describe{
+	color: rgb(128, 128, 128);
+}
+.price{
+	position: absolute;
+	font-size: 18px;
+	bottom: 0px;
+	left:0px;
+	font-weight: bold;
+	background-color: black;
+	color: white;
+	padding:5px;
+}
+.container-featured-shoes-items{
+	border:1px solid silver;
+	height:340px;
+	position: relative;
+}
+.name{
+	padding-top: 10px;
+	font-size:15px;
+}
+
+.container-featured-shoes-items i
+{
+	color:silver; 
+	position: absolute; 
+	top:5px; 
+	right:15px;
+}
+.container-featured-shoes-items i:hover{
+	background-color: transparent;
+	border:none;
+	}
+.container-featured-shoes-items{
+	border:1px solid silver;
+	height:340px;
+	position: relative;
+}
+.container-featured-shoes-items:hover {
+    border: 1px solid black;
+}
+
+.drop-desc{
+	display: grid;
+	grid-template-columns: repeat(2,35%);
+}
+.drop-desc img{
+	width:100%;
+}
+.dropdown-hidden
+{
+	display:none;
+}
+
 </style>
 <body>
 	
@@ -242,24 +378,147 @@
 						<button class="controls addToFavourite">Favourite</button>
 					</div>
 					
-					<div>
-						<div>
-							<a href="#">Free Standard Shipping for members</a>
-						</div>
+					<div class="freeShip">
+				   		<a href="#">Free Standard Shipping for members</a>
 					</div>
 					
 				</div>	
 		</section>
-			<hr>
+			
 		<section class="section2-container">
 			
+			<div class="all-details">
+				<hr>
+				<div>
+					<div class="product-details-control">
+						<p>Product Details </p>
+						<i class="fa fa-angle-down desc-icons" style="font-size:24px; color:black;"></i>
+					</div>
+					<div class="product-details-dropdown dropdown-hidden">
+						<ul>
+						  <li>Stylish and durable with a leather and textile upper</li>
+						  <li>Secure fit provided by classic laces</li>
+						  <li>Lightweight comfort thanks to a cushioned midsole</li>
+						  <li>Long-lasting traction with a durable rubber outsole</li>
+						</ul>
+						<p>Product code: IH2981</p>
+					</div>
+				</div>
+				
+			<hr>
+				<div>
+					<div class="product-details-control">
+						<p>Reviews </p>
+						<i class="fa fa-angle-down desc-icons" style="font-size:24px; color:black;"></i>
+					</div>
+					<div class="product-details-dropdown dropdown-hidden">
+						<button>WRITE THE First Review</button>
+					</div>
+				</div>
+				
+			
+			
+			
+				
+			
+			<hr>
+				<div>
+					<div class="product-details-control">
+						<p>Description </p>
+						<i class="fa fa-angle-down desc-icons" style="font-size:24px; color:black;"></i>
+					</div>
+					<div class="product-details-dropdown dropdown-hidden">
+						<div>
+							<div class="drop-desc">
+								<div>
+									<h3>Authentic Samba shoes for the next generation.</h3>
+								<p>
+									If you were to time travel back to the 1960s, you’d see pro soccer players wearing adidas Sambas similar to these kids’ shoes. 
+									Well, almost similar. Updated for the new generation, these shoes offer a soft sockliner for all-day comfort. 
+									The leather upper, gum rubber sole, and iconic 3-Stripes keep the classic style intact.
+								</p>
+									
+								</div>
+								
+								<img th:src="@{https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/0f179e1a58d84657990a618137fc57bc_9366/Samba_OG_Shoes_Kids_White_IE8848_04_standard.jpg}">
+							</div>
+						</div>
+						
+					</div>
+				</div>
+				
+				
+			
+			<hr>
+			
+			<div>
+					<div class="product-details-control">
+						<p>Product Details </p>
+						<i class="fa fa-angle-down desc-icons" style="font-size:24px; color:black;"></i>
+					</div>
+					<div class="product-details-dropdown dropdown-hidden">
+						<h3>Shipping Options in Canada</h3>
+
+						<p>Eagles provides various shipping options to suit your needs for deliveries within Canada.</p>
+						
+						<ul>
+						  <li><strong>FREE Standard Shipping:</strong> Available on all orders over $99*</li>
+						  <li><strong>$10 Flat Rate Standard Shipping:</strong> Applies to orders not eligible for free shipping</li>
+						  <li><strong>$10 Express Shipping:</strong> For orders over $99</li>
+						  <li><strong>$13 Express Shipping:</strong> For orders under $99 or those containing release products</li>
+						  <li><strong>Standard Shipping to NWT, Yukon, and Nunavut:</strong> $20.00</li>
+						  <li><strong>Express Shipping to NWT, Yukon, and Nunavut:</strong> $30.00</li>
+						</ul>
+						
+						<h3>Estimated Delivery Times</h3>
+						
+						<ul>
+						  <li><strong>Standard Shipping:</strong> 5-7 business days</li>
+						  <li><strong>Express Shipping:</strong> 1-2 business days</li>
+						</ul>
+						
+						<p>Please allow an additional 3-5 business days for our team to process your order for shipment.</p>
+						
+						<p>Note: We only ship to locations within Canada and do not offer international shipping.</p>
+						
+						<p>*For more details, please view our Shipping Policy.</p>
+
+					</div>
+				</div>
+			
+				
+			<hr>	
+			</div>
+		</section>
+		
+		<section class="section3">
+					<h1>YOU MAY ALSO LIKE</h1>
+					<br>
+					<div class="suggested-shoes"> 
+							 <div th:each="shoe : ${shoes}" class="container-featured-shoes-items">
+								 <a th:href="@{/home/selectedShoe}" id="anchorSugest">
+		                         <img th:src="${shoe.pictureURL}" width="100%" height="100%">
+		                         </a>
+		                         <i th:id="${shoe.shoeId}" class="fa fa-heart favourite" style='font-size:35px;'></i>
+		                         <p class="price" th:text="${'C$ ' + shoe.price}"></p>
+		                         <img class="heart">
+		                         <div class="shoe-desc" th:id="${shoe.shoeName}">
+									 <h6 class="name" th:text="${shoe.shoeName}"></h6>
+			                         <p class="describe">Men's Shoe</p>
+			                         <p class="describe">3 Colors</p>
+								 </div>
+		                      </div> 
+					</div>
+		
 		</section>
 		
 		
 			
 
 		<footer th:include="fragments/general.html :: footer"></footer>
+
 <script th:src="@{/Script/selectedShoe.js}"></script>
+
 <script th:src="@{/Script/dropdown.js}"></script>	
 <script th:src="@{/Script/search.js}"></script>  
  

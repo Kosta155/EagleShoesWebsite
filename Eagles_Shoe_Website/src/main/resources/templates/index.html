@@ -85,9 +85,11 @@
 					<h1>ALL FEATURED SHOES</h1>
 					
 					<div class="container-featured-shoes">
-					  <a th:href="@{/home/selectedShoe}" id="demo">
+					 
 						<div th:each="shoe : ${shoes}" class="container-featured-shoes-items">
+						 <a th:href="@{/home/selectedShoe}" id="demo">
                          <img th:src="${shoe.pictureURL}" width="100%" height="100%">
+                         </a>	
                          <i th:id="${shoe.shoeId}" class="fa fa-heart favourite" style='font-size:35px;'></i>
                          <p class="price" th:text="${'C$ ' + shoe.price}"></p>
                          <img class="heart">
@@ -97,7 +99,7 @@
 	                         <p class="describe">3 Colors</p>
 						 </div>
                       </div>
-                      </a>	
+                      
 					</div>
 				</div>
 			</div>

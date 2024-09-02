@@ -161,7 +161,7 @@ button:hover {
 	padding-bottom: 20px;
 	
 }
-.container-featured-shoes #demo {
+.container-featured-shoes {
   display: grid;
   grid-auto-flow:column;
   grid-auto-columns: 18%;
@@ -179,7 +179,6 @@ padding-bottom: 6rem;
 	color: rgb(128, 128, 128);
 }
 .container-featured-shoes::-webkit-scrollbar {
-  
   height:5px;
 }
 
