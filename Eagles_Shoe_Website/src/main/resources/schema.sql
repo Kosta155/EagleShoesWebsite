@@ -23,9 +23,14 @@ CREATE TABLE orders (
   orderTime datetime NOT NULL,
   email varchar(80) NOT NULL,
   addressId bigint NOT NULL,
+  street varchar(50) NOT NULL,
+  city varchar(50) NOT NULL,
+  province varchar(40) NOT NULL,
+  country varchar(50) NOT NULL,
+  postalCode varchar(10) NOT NULL,
   PRIMARY KEY (orderId),
-  CONSTRAINT oder_FK1 FOREIGN KEY (addressId) REFERENCES address (addressId)
-
+  CONSTRAINT oder_FK1 FOREIGN KEY (email) REFERENCES members (email)
+  
 );
 
 CREATE TABLE sec_role (

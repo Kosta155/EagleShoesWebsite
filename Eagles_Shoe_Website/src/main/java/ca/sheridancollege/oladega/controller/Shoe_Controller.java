@@ -8,6 +8,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -79,6 +80,22 @@ public class Shoe_Controller {
 	    model.addAttribute("addresses",address);
 		return "address.html";
 	}
+	@PostMapping("/submitAddress")
+	public String submitAddressPage(
+			  
+			@RequestParam String streetaddress,
+            @RequestParam String unitno,
+			@RequestParam String city,
+			@RequestParam String province,
+			@RequestParam String postalcode)
+	{
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+	    String username = authentication.getName();
+		Address address = new Address(1,streetaddress+ " " +unitno,city, province, "Canada",postalcode.toUpperCase(),username);
+		shoeRepo.addAddress(address);
+		
+		return "redirect:/home/addressPage";
+	}
 	@GetMapping("/home/orderHistory")
 	public String getOrderHistoryPage()
 	{
@@ -98,6 +115,12 @@ public class Shoe_Controller {
 	}
 	
 	
-	
+	@GetMapping(value = {"/deleteAddress/{id}"})
+    public String processDelete(@PathVariable int id, Model model)
+    {
+        Address address = shoeRepo.getAddressById(id);
+        shoeRepo.deleteAddress(address);
+        return "redirect:/home/addressPage";
+    }
 	
 }
