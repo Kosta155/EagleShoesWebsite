@@ -11,9 +11,19 @@ VALUES ('234 Wildgrass Rd','Mississauga','On','Canada','L5B4H8','kostika@example
 INSERT INTO address (street, city, province,country,postalCode , email)
 VALUES ('234 Riel Drive','Oakville','On','Canada','L5B4K1','kostika@example.com');
 
+INSERT INTO orders (orderTime, email, addressId, street, city, province, country, postalCode)
+VALUES ('2024-09-02 10:30:00', 'kostika@example.com', 1001, '123 Main St', 'Vancouver', 'British Columbia', 'Canada', 'V5K0A1');
 
-INSERT INTO orders ( orderTime, email, addressId)
-VALUES ( '2024-01-06 12:30:00', 'kostikanini@example.com', 1);
+INSERT INTO orders (orderTime, email, addressId, street, city, province, country, postalCode)
+VALUES ('2024-09-03 14:15:00', 'kostika@example.com', 1002, '456 Maple Rd', 'Toronto', 'Ontario', 'Canada', 'M5J2N1');
+
+INSERT INTO orders (orderTime, email, addressId, street, city, province, country, postalCode)
+VALUES ('2024-09-04 09:00:00', 'kostika@example.com', 1003, '789 Oak Ave', 'Calgary', 'Alberta', 'Canada', 'T2P3N4');
+
+INSERT INTO orders (orderTime, email, addressId, street, city, province, country, postalCode)
+VALUES ('2024-09-05 17:45:00', 'kostika@example.com', 1004, '321 Pine Dr', 'Montreal', 'Quebec', 'Canada', 'H3A2G3');
+
+
 
 INSERT INTO sec_role (roleId, roleName)
 VALUES (1, 'ROLE_MEMBER');

@@ -14,7 +14,11 @@ public class Order {
 	private long orderId;
 	private Date orderTime;
 	private String email;
-	private long addressId;
+	private String street;
+	   private String city;
+	   private String province;
+	   private String country;
+	   private String postalCode;
 }
 
 

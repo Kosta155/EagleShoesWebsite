@@ -59,6 +59,7 @@ public class SecurityConfig {
 				.requestMatchers(antMatcher("/viewPage")).hasAnyRole("ADMIN","MEMBER")
 				.requestMatchers(antMatcher("/edit/**")).hasRole("ADMIN")
 				.requestMatchers(antMatcher("/edit")).hasRole("ADMIN")
+				.requestMatchers(antMatcher("/deleteAddress/**")).hasAnyRole("ADMIN","MEMBER")
 				.requestMatchers(antMatcher("/delete/**")).hasRole("ADMIN")
 				.requestMatchers(antMatcher("/h2-console/**")).permitAll()
 				.requestMatchers(antMatcher("/")).permitAll()

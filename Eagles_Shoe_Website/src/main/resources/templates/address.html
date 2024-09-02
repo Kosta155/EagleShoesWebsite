@@ -42,14 +42,14 @@
         </div>
         <div class="section-item2">
             <h1>Addresses</h1>
-            <div class="item">
+            <div class="item" >
                 <h3 id="add">&#43;<a>Add new address</a></h3>
             </div>
-            <div th:each="address : ${addresses}" class="item adresses">
+            <div th:each="address : ${addresses}"  class="item adresses">
                 <h3 th:text="${address.email}" ></h3>
                 <p th:text="${address.street} + ', ' + ${address.city} + ', ' +  ${address.province} + ', ' + ${address.postalCode}"></p>
                 <div>
-                    <a>Edit</a> | <a>Remove</a>
+                    <a>Edit</a> | <a th:href="@{/deleteAddress/{id}(id=${address.addressId})}">Remove</a>
                 </div>
             </div>
            
