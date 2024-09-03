@@ -10,6 +10,7 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import ca.sheridancollege.oladega.beans.Address;
+import ca.sheridancollege.oladega.beans.Order;
 import ca.sheridancollege.oladega.beans.User;
 import org.springframework.stereotype.Repository;
 import lombok.AllArgsConstructor;
@@ -34,20 +35,6 @@ public class SecurityReprisotory {
 		}
 	}
 	
-	public List<Address> getAddressesByEmail(String email){
-		MapSqlParameterSource parameters = new MapSqlParameterSource();
-		String query = "SELECT * from address WHERE email=:user";
-		parameters.addValue("user", email);
-		List<Address> addressList = jdbc.query(query,parameters, new BeanPropertyRowMapper<>(Address.class));
-		if(addressList.size()>0)
-		{
-			return addressList;
-		}
-		else
-		{
-			return null;
-		}
-	}
 	
 	public List<String> getRolesByUser(String email)
 	{
@@ -103,6 +90,8 @@ public class SecurityReprisotory {
 			return null;
 		}
 	}
+
+	
 	
 
 }

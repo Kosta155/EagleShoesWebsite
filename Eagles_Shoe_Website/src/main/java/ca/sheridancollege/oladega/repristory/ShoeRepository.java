@@ -10,6 +10,7 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import ca.sheridancollege.oladega.beans.Address;
+import ca.sheridancollege.oladega.beans.Order;
 import ca.sheridancollege.oladega.beans.Shoe;
 import ca.sheridancollege.oladega.beans.User;
 import lombok.AllArgsConstructor;
@@ -117,7 +118,35 @@ public class ShoeRepository {
 	        jdbc.update(query,parameters);
 	}
   
+	public List<Address> getAddressesByEmail(String email){
+		MapSqlParameterSource parameters = new MapSqlParameterSource();
+		String query = "SELECT * from address WHERE email=:user";
+		parameters.addValue("user", email);
+		List<Address> addressList = jdbc.query(query,parameters, new BeanPropertyRowMapper<>(Address.class));
+		if(addressList.size()>0)
+		{
+			return addressList;
+		}
+		else
+		{
+			return null;
+		}
+	}
 	
+	public List<Order> getOrdersByEmail(String email) {
+		MapSqlParameterSource parameters = new MapSqlParameterSource();
+		String query = "SELECT * from orders WHERE email=:user";
+		parameters.addValue("user", email);
+		List<Order> orders = jdbc.query(query,parameters, new BeanPropertyRowMapper<>(Order.class));
+		if(orders.size()>0)
+		{
+			return orders;
+		}
+		else
+		{
+			return null;
+		}
+	}
 	
 	
 }

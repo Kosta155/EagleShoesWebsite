@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import ca.sheridancollege.oladega.beans.Shoe;
 import ca.sheridancollege.oladega.beans.User;
 import ca.sheridancollege.oladega.beans.Address;
-
+import ca.sheridancollege.oladega.beans.Order;
 import ca.sheridancollege.oladega.repristory.SecurityReprisotory;
 import ca.sheridancollege.oladega.repristory.ShoeRepository;
 import lombok.AllArgsConstructor;
@@ -61,7 +61,7 @@ public class Shoe_Controller {
 	    String username = authentication.getName();
 		User user = secRepo.findUserByEmail(username);
 		List <Address> address = new ArrayList<>();
-		address = secRepo.getAddressesByEmail(username);
+		address = shoeRepo.getAddressesByEmail(username);
 	    if(address != null)
 	    {
 		model.addAttribute("address",address.get(0));
@@ -76,7 +76,7 @@ public class Shoe_Controller {
 		List <Address> address = new ArrayList<>();
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 	    String username = authentication.getName();
-		address = secRepo.getAddressesByEmail(username);
+		address = shoeRepo.getAddressesByEmail(username);
 	    model.addAttribute("addresses",address);
 		return "address.html";
 	}
@@ -93,12 +93,16 @@ public class Shoe_Controller {
 	    String username = authentication.getName();
 		Address address = new Address(1,streetaddress+ " " +unitno,city, province, "Canada",postalcode.toUpperCase(),username);
 		shoeRepo.addAddress(address);
-		
 		return "redirect:/home/addressPage";
 	}
 	@GetMapping("/home/orderHistory")
-	public String getOrderHistoryPage()
+	public String getOrderHistoryPage(Model model)
 	{
+		List <Order> orders = new ArrayList<>();
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+	    String username = authentication.getName();
+		orders = shoeRepo.getOrdersByEmail(username);
+	    model.addAttribute("orders",orders);
 		return "orderHistory.html";
 	}
 	@GetMapping("/home/selectedShoe")
@@ -122,5 +126,7 @@ public class Shoe_Controller {
         shoeRepo.deleteAddress(address);
         return "redirect:/home/addressPage";
     }
+	
+	
 	
 }
