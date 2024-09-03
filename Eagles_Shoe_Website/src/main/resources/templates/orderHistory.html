@@ -52,7 +52,7 @@
 				</div>
 			</div>
 			
-			<div class="section-item2">
+			<div th:unless="${orders}" class="section-item2">
 				<h1>Order History</h1>
 				<div class="item">
 					<h3>No order history found: &#43 <a>Place new order</a></h3>
@@ -60,9 +60,19 @@
 				</div>
 				<img th:src="@{https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrFAAZeji11UIfSYBFdZfnaXHapdHfIQK1gVizQRxyfIWmbuZVqiQTVNKFKFB7UB_MEWY&usqp=CAU}
 				" width="270px" style="margin:7% 25%;">
-				
+			</div>
+			
+			<div th:if="${orders}"  class="section-item2">
+				<h1>Order History</h1>
+				<div th:o="item" th:each="order : ${orders}">
+				<h3 th:text="${order.orderTime}"></h3>
+				<h3 th:text="${order.email}"></h3>
+
+				</div>
 				
 			</div>
+			
+			
 			
 		</section>
 		<hr>

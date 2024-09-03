@@ -30,7 +30,7 @@ CREATE TABLE orders (
   postalCode varchar(10) NOT NULL,
   PRIMARY KEY (orderId),
   CONSTRAINT oder_FK1 FOREIGN KEY (email) REFERENCES members (email)
-  
+   
 );
 
 CREATE TABLE sec_role (
