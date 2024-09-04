@@ -449,7 +449,10 @@ footer {
 	display:grid;
 	grid-template-columns: auto auto;
 	row-gap: 10%;
+	overflow-y: scroll;
 }
+
+
 .shoeSearched{
 	display:flex;
 	gap:3%;

@@ -130,10 +130,22 @@
 		</section>
 		 <footer th:include="fragments/general.html :: footer"></footer>
 		
+       <script  th:inline="javascript">
+        /*<![CDATA[*/
+        var shoes = /*[[${shoes}]]*/ [];
+        /*]]>*/
+        
+        
+
+        
+    </script>
 	<script th:src="@{/Script/dropdown.js}"></script>
+	<script th:src="@{/Script/search.js}"  ></script>
 	<script th:src="@{/Script/favourite.js}"></script>
-	<script th:src="@{/Script/search.js}"></script>
+	
+	
     <input type="hidden" th:value="${username}" id="username">
+    
     
 	
 	
