@@ -404,17 +404,17 @@ footer {
 .modal-content
 {
 	color:black;
-	display: flex;
+	display: grid;
+	grid-template-columns: 20% 70%;
 	justify-content: space-around;
-	padding-top:20px;
+	padding:20px 25px;
 	
 	
 }
 .modal-content-img
 {
 	width:120px;
-	border:1px solid silver;
-	background: silver;
+	
 }
 .modal-content-text h5,.modal-content-text p
 {
@@ -441,15 +441,38 @@ footer {
 }
 .modal-content-item2
 {
-	width:50%;
+	width:100%;
+	
 }
+.SuggestedShoes::-webkit-scrollbar {
+  width:5px;
+}
+
+/* Track */
+.SuggestedShoes::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+.SuggestedShoes::-webkit-scrollbar-thumb {
+  background: black; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.SuggestedShoes::-webkit-scrollbar-thumb:hover {
+  background: rgba(0,0,0,0.3); 
+}
+
 
 .SuggestedShoes
 {
 	display:grid;
-	grid-template-columns: auto auto;
+	grid-template-columns: auto auto auto;
 	row-gap: 10%;
 	overflow-y: scroll;
+	overscroll-behavior-inline: contain;
 }
 
 

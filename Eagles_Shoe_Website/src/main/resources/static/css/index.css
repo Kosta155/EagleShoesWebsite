@@ -237,7 +237,7 @@ padding-bottom: 6rem;
 	
 /* Section 3 Styles */
 .section3 {
-    height: 750px;
+    height: 770px;
     display: grid;
     grid-template-columns: repeat(2, 48%);
     justify-content: space-around;
