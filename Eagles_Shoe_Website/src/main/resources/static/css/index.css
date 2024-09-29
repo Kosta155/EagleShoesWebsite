@@ -6,6 +6,10 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
 /* Section 1 Styles */
 .section1 {
     height: 900px;
@@ -20,7 +24,7 @@
 }
 @keyframes changeBackground {
     0% {
-        background-image: url("https://wallpapercave.com/wp/wp7513030.jpg");
+        background-image: url("https://c0.wallpaperflare.com/preview/1007/778/354/blur-brand-depth-of-field-fashion.jpg");
     }
     34% {
         background-image: url("https://news.artnet.com/app/news-upload/2023/04/sneakers-1024x768.jpg");
@@ -29,7 +33,7 @@
         background-image: url("https://c0.wallpaperflare.com/preview/1007/778/354/blur-brand-depth-of-field-fashion.jpg");
     }
     100%{
-		background-image: url("https://wallpapercave.com/wp/wp7513030.jpg");
+		background-image: url("https://c0.wallpaperflare.com/preview/1007/778/354/blur-brand-depth-of-field-fashion.jpg");
 		
 	}
     
@@ -133,7 +137,7 @@ button:hover {
 }
 .shoe-desc{
 	position: absolute;
-	bottom: -4rem;
+	bottom:-5.5rem;
 }
 
 .type-sport-items:hover {

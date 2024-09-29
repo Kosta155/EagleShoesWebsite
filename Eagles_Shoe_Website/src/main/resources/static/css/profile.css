@@ -11,6 +11,7 @@
     margin-bottom:2%;
    
 }
+body{ font-family: 'Poppins', sans-serif;}
 .hori-section{
 	display:grid;
 	justify-content: center;
