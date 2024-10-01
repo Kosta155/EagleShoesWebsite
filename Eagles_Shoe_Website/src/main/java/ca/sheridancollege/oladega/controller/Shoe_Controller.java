@@ -112,6 +112,13 @@ public class Shoe_Controller {
 		model.addAttribute("shoes",shoes);
 		return "selectedShoe.html";
 	}
+	@GetMapping("/home/generalViewPageShoe")
+	public String getGeneralViewPageShoe(Model model)
+	{
+		List<Shoe> shoes = shoeRepo.getAllAvailableShoes();	
+		model.addAttribute("shoes",shoes);
+		return "generalViewPage.html";
+	}
 	@GetMapping("/home/paymentPage")
 	public String getpaymentPage()
 	{

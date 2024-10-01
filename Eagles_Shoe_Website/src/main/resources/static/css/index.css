@@ -82,7 +82,7 @@ button:hover {
 
 /* Section 2 Styles */
 .section2 {
-    height: 2000px;
+    height: 2100px;
     background-size: cover;
     
 }
@@ -206,7 +206,7 @@ padding-bottom: 6rem;
 
 .container-featured-shoes-items{
 	border:1px solid silver;
-	height:340px;
+	height:400px;
 	position: relative;
 }
 .container-featured-shoes-items:hover {
