@@ -73,6 +73,7 @@ CREATE TABLE Quantity(
     colorName varchar(50) NOT NULL,
     size double NOT NULL,
     shoeId int NOT NULL,
+    quantity int NOT NULL,
     PRIMARY KEY (colorName, size, shoeId),
     CONSTRAINT quantity_FK1 FOREIGN KEY (colorName) REFERENCES Color (colorName),
     CONSTRAINT quantity_FK2 FOREIGN KEY (size) REFERENCES Size (size),

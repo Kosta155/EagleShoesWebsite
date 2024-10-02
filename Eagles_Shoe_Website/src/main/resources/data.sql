@@ -62,16 +62,16 @@ VALUES
 (8);
 
 
-INSERT INTO Quantity (colorName, size, shoeId)
+INSERT INTO Quantity (colorName, size, shoeId,quantity)
 VALUES 
-('Black', 10, 1),
-('Black', 9, 1),
-('Blue', 10, 2),
-('Blue', 9.5, 2),
-('Blue', 8.5, 3),
-('White', 10, 4),
-('White', 9, 4),
-('White', 8, 5);
+('Black', 10, 1,3),
+('Black', 9, 1,4),
+('Blue', 10, 2,5),
+('Blue', 9.5, 2,5),
+('Blue', 8.5, 3,2),
+('White', 10, 4,1),
+('White', 9, 4,3),
+('White', 8, 5,4);
 
 
 INSERT INTO Picture (colorName, shoeId, pictureURL, picture2URL, picture3URL, picture4URL)

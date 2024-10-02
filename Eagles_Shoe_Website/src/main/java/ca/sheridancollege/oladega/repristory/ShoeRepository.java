@@ -24,7 +24,7 @@ public class ShoeRepository {
 	public List<Shoe> getAllAvailableShoes()
 	{	
 		MapSqlParameterSource parameters = new MapSqlParameterSource();
-		String query = "SELECT s.shoeName, p.pictureURL, s.price, MIN(s.shoeID) as shoeID " +
+		String query = "SELECT s.shoeName, p.pictureURL, s.price, MIN(s.shoeID) as shoeID, shoeStatus " +
 	               "FROM Shoes s " +
 	               "JOIN Picture p ON s.shoeID = p.shoeID " +
 	               "JOIN Quantity q ON s.shoeID = q.shoeID " +
@@ -68,6 +68,33 @@ public class ShoeRepository {
 			return null;
 		}
 	}
+	
+	public List<Shoe> getSelectedShoe(long id)
+	{	
+		MapSqlParameterSource parameters = new MapSqlParameterSource();
+		String query = "SELECT s.shoeName, p.pictureURL, s.price, s.shoeID, q.quantity, q.size, p.colorName, s.gender, s.discount, s.shoebrand, s.shoetype, s.shoestatus, p.picture2URL, p.picture3URL, p.picture4URL " +
+	               "FROM Shoes s " +
+	               "JOIN Picture p ON s.shoeID = p.shoeID " +
+	               "JOIN Quantity q ON s.shoeID = q.shoeID " +
+	               "JOIN Size si ON si.size = q.size " +
+	               "JOIN Color c ON c.colorName = p.colorName "+
+	               "where s.shoeId=:id and q.quantity>0";
+		                
+
+
+		parameters.addValue("id", id);
+		List<Shoe> shoes =  jdbc.query(query, parameters, new BeanPropertyRowMapper<>(Shoe.class));
+
+		if(shoes.size()>0)
+		{
+			return shoes;
+		}
+		else {
+			return null;
+		}
+	}
+	
+	
 
 	
 	

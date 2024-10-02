@@ -20,6 +20,8 @@ public class Shoe {
 	    private Date shoeDate;
 	    private Long discount;
 	    private String color;
+	    private String shoeStatus;
+	    private long quantity;
 	    private long size;
 	    private long orderId;
 	    private String pictureURL;
