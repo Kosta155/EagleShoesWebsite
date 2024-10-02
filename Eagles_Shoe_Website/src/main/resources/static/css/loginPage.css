@@ -10,6 +10,10 @@ body {
    
     height:950px;
 }
+body {
+    font-family: 'Poppins', sans-serif;
+    height:950px;
+}
 
 .main-container{
 	display:flex;

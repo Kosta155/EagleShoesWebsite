@@ -69,7 +69,7 @@ function searchShoes() {
 
     // If no results found, show a message
     if (filteredOrders.length === 0) {
-        resultsContainer.innerHTML = '<li>No matching orders found.</li>';
+        resultsContainer.innerHTML = 'No matching orders found';
     }
 	
 }

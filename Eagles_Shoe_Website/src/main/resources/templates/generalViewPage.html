@@ -2,29 +2,566 @@
 <html xmnls:th="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
-<link rel="stylesheet" th:href="@{/css/index.css}">
+<title>Eagles.com</title>
+ <link rel="icon" type="image/x-icon" th:href="@{/images/logo.png}">
+
 <link rel="stylesheet" th:href="@{/css/general.css}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
 
+
 </head>
+<style>
+	.Search-result{
+		display:flex;
+		padding:25px 40px;
+		font-size:18px;
+		gap:4px;
+	    width:20%;
+	   
+		margin:0px 10% ;
+		
+		
+	}
+	
+	
+	.main-tool-bar
+	{
+		display: grid;
+		grid-template-columns: 60% 10%;
+		justify-content: space-around;
+	}
+	.tool-bar
+	{
+		display: flex;
+		gap:10px;
+		padding:25px;
+	}
+	.tool-bar-items,.tool-bar-items-2 
+	{
+		display: flex;
+		
+		border:1px solid silver;
+		justify-content: center;
+		align-items: center;
+		padding:0px 10px;
+		
+	}
+	.tool-bar-items{
+		color:black;
+		font-weight: bold;
+		font-size: 18px;
+	}
+	.fa-angle-down
+	{
+		padding-top:13px;
+	}
+	.fa-angle-down:hover
+	{
+		background-color: white;
+		border:none;
+		border-radius: 0px;
+		
+		
+	}
+	.fa-sliders{background-color: white; color:black; font-size:30px;}
+	hr{
+		color: 0.2px solid silver;
+	}
+	.menu-two
+	{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		
+		
+		
+	}
+	
+	.display-shoes-section{
+		border:2px olid green;
+		padding:2% 12%;
+		height:130rem;
+	}
+	.section3
+	{width:100%; height:100%;display: grid; justify-content: space-around;margin:6rem 0px;}
+	
+	.suggested-shoes 
+	{
+	 display: grid;
+	  grid-template-columns: repeat(4,1fr);
+	  color:black;
+	  width:105%;
+	  column-gap:10px;
+		align-items: space-around;
+	}
+	
+	.container-featured-shoes-items{
+	border:1px solid silver;
+	height:450px;
+	position: relative;
+}
+.container-featured-shoes-items:hover {
+    border: 1px solid black;
+}
+
+.price{
+	position: absolute;
+	font-size: 18px;
+	bottom: 0px;
+	left:0px;
+	font-weight: bold;
+	background-color: black;
+	color: white;
+	padding:5px;
+}
+.name{
+	
+	font-size:18px;
+}
+.filter-details{
+	display:flex;
+	border:2px solid green;
+	position: relative;
+	width:200px;
+    gap:20px;
+}
+
+.filter-details-dropdown
+{
+	border:1px solid black;
+	
+}
+label{display:block;}
+input[type=checkbox]{
+	appearance: none;
+	width:30px;
+	height:28px;
+	background-color: white;
+	border-radius: 4px;
+	border:1px solid silver;
+	display:inline-block;
+	vertical-align: middle;
+	position: relative;
+	transition: 0.5s all ease-in-out;
+	padding:1px 5px;
+}
+input[type=checkbox]:checked,input[type=radio]:checked
+{
+	background-color: black;
+}
+
+input[type=checkbox]::before
+{
+	content:'\2713';
+	font-size: 20px;
+	font-weight: bold;
+}
+
+
+input[type=radio]{
+	appearance: none;
+	width:28px;
+	height:29px;
+	background-color: white;
+	border:1px solid silver;
+	border-radius: 50%;
+	vertical-align: middle;
+	transition: 0.5s all ease-in-out;
+}
+
+
+
+.gender-dropdown ,
+ .price-dropdown,
+ .category-dropdown,
+ .size-dropdown,
+ .color-dropdown,
+ .shoe-style-dropdown{
+	border:1px solid silver;
+	width:300px;
+	background-color: white;
+	position: absolute;
+	height:200px;
+	margin-top:6px;
+	display:grid;
+	padding:20px 20px;
+	gap:5px;
+	align-items: space-around;
+	z-index: 1;
+}
+.shoe-style-dropdown{
+	display:grid;
+	height:max-content;
+}
+
+.size-dropdown{
+	display:grid;
+	grid-template-columns: repeat(6, auto);
+	width: max-content;
+	padding-top: 35px;
+	
+}
+.color-dropdown{
+	display:grid;
+	grid-template-columns: repeat(4, auto);
+	width: max-content;
+	justify-content: center;
+	padding: 35px 20px;
+	height:max-content ;
+	gap:20px;
+}
+.price-range{
+	font-style: italic;
+}
+.cancel-drop{
+	position: absolute;
+	right:10px;
+	top:5px;
+	border:1px solid black;
+	border-radius: 50%;
+	padding:3px 7px;
+	margin-left:12px;
+	
+}
+.cancel-drop:hover
+{
+	border:1px solid silver;
+	color:silver;
+	
+	
+}
+.hidden-dropdown{
+	display:none;
+}
+.size-numbers{
+	border:2px solid silver;
+	text-align: center;
+	vertical-align:middle;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width:70px;
+}
+.size-numbers:hover{
+	border:2px solid black;
+}
+.color-box{
+	display: grid;
+	gap:5px;
+}
+.color-img{
+	border: 2px solid black;
+	border-radius: 50%;
+	width: 28px;
+	height:28px;
+	justify-self:center;
+}
+
+</style>
 <body>
 	
-	<div class="main-container">
-		<header th:include="~{fragments/general.html :: header}">
-		</header>
+	
+	<header th:include="~{fragments/general.html :: header}"></header>
+	<section class="fiter-section" >
+		<div class="">
+			<div class="Search-result">
+			<h4>Home</h4>/ 
+			<p>All shoes</p>
+		</div>
+			
+		</div>
 		
+		<hr>
+		<div class="main-tool-bar">
+			<div class="tool-bar">
+				<i class="fa fa-sliders"></i>
+				<div class="toolbar-container">
+					<div class="tool-bar-items">
+						<p>Gender</p>
+						<i class="fa fa-angle-down desc-icons" style="font-size:24px; color:black;"></i>
+					</div>
+					
+					<div class="gender-dropdown hidden-dropdown">
+						<span class="cancel-drop">x</span>
+						<label class="container">
+						  <input type="checkbox" />
+						 <span class="gender-type"> Men</span>
+						 <span class="gender-count">[35]</span>
+						</label>
+						<label class="container">
+						  <input type="checkbox">
+						  <span class="gender-type">Women</span>
+						 <span class="gender-count">[25]</span>
+						</label>
+						<label class="container">
+						  <input type="checkbox">
+						  <span class="gender-type">Boys</span>
+						  <span class="gender-count">[15]</span>
+						</label>
+						<label class="container">
+						  <input type="checkbox">
+						  <span class="gender-type">Girls</span>
+						  <span class="gender-count">[15]</span>
+						</label>
+						<label class="container">
+						  <input type="checkbox">
+						  <span class="gender-type">Unisex</span>
+						  <span class="gender-count">[10]</span>
+						</label>
+					</div>
+					
+				</div>
+			
+				<div>
+					<div class="tool-bar-items">
+						<p>Price</p>
+						<i class="fa fa-angle-down desc-icons" style="font-size:24px; color:black;"></i>
+					</div>
+					<div class="price-dropdown  hidden-dropdown ">
+						<span class="cancel-drop">x</span>
+						<label class="container">
+						  <input type="radio" name="price-group" />
+						  <span class="price-range"> C$ 80 - C$ 150</span>
+						</label>
+						<label class="container">
+						  <input type="radio" name="price-group">
+						 <span class="price-range"> C$ 170 - C$ 300</span>
+						</label>
+						<label class="container">
+						  <input type="radio" name="price-group">
+						  <span class="price-range"> C$ 310 - C$ 500</span>
+						</label>
+						<label class="container">
+						  <input type="radio" name="price-group">
+						  <span class="price-range">Above - C$ 500</span>
+						</label>
+						
+					</div>
+				</div>
+				
+				<div>
+					<div class="tool-bar-items">
+						<p>Category</p>
+						<i class="fa fa-angle-down desc-icons" style="font-size:24px; color:black;"></i>
+					</div>
+					
+					<div class="category-dropdown hidden-dropdown">
+						<span class="cancel-drop">x</span>
+						<label class="container">
+						  <input type="checkbox" />
+						 <span class="category-type"> Trending Shoes</span>
+						</label>
+						<label class="container">
+						  <input type="checkbox">
+						  <span class="category-type">Exclusive Shoes</span>
+					
+						</label>
+						<label class="container">
+						  <input type="checkbox">
+						  <span class="category-type">Premium Shoes</span>
+						</label>
+						<label class="container">
+						  <input type="checkbox">
+						  <span class="category-type">New Arrivals</span>
+						</label>
+						<label class="container">
+						  <input type="checkbox">
+						  <span class="category-type">Casual Shoes</span>
+						</label>
+					</div>
+				</div>
+				
+			
+				<div>
+					<div class="tool-bar-items">
+						<p>Size</p>
+						<i class="fa fa-angle-down desc-icons" style="font-size:24px; color:black;"></i>
+					</div>
+					<div class="size-dropdown hidden-dropdown">
+						<span class="cancel-drop">x</span>
+						<div class="size-numbers">
+							<p>3</p>
+						</div>
+						<div class="size-numbers">
+							<p>3.5</p>
+						</div>
+						<div class="size-numbers">
+							<p>4</p>
+						</div>
+						<div class="size-numbers">
+							<p>4.5</p>
+						</div>
+						<div class="size-numbers">
+							<p>5</p>
+						</div>
+						<div class="size-numbers">
+							<p>5.5</p>
+						</div>
+						<div class="size-numbers">
+							<p>6</p>
+						</div>
+						<div class="size-numbers">
+							<p>6.5</p>
+						</div>
+						<div class="size-numbers">
+							<p>7</p>
+						</div>
+						<div class="size-numbers">
+							<p>7.5</p>
+						</div>
+						<div class="size-numbers">
+							<p>8</p>
+						</div>
+						<div class="size-numbers">
+							<p>8.5</p>
+						</div>
+						<div class="size-numbers">
+							<p>9</p>
+						</div>
+						<div class="size-numbers">
+							<p>9.5</p>
+						</div>
+						<div class="size-numbers">
+							<p>10</p>
+						</div>
+						<div class="size-numbers">
+							<p>10.5</p>
+						</div>
+						<div class="size-numbers">
+							<p>11</p>
+						</div>
+						<div class="size-numbers">
+							<p>12</p>
+						</div>
+					</div>
+				</div>
+			
+				<div>
+					<div class="tool-bar-items">
+						<p>Color</p>
+						<i class="fa fa-angle-down desc-icons" style="font-size:24px; color:black;"></i>
+					</div>
+					<div class="color-dropdown  hidden-dropdown">
+						<span class="cancel-drop">x</span>
+						
+						<div class="color-box">
+							<div class="color-img" style="background-color: black;"></div>
+							<p>Black [30]</p>
+						</div>
+						<div class="color-box">
+							<div class="color-img" style="background-color: white;"></div>
+							<p>white [20]</p>
+						</div>
+						<div class="color-box">
+							<div class="color-img" style="background-color: yellow;"></div>
+							<p>Yellow [8]</p>
+						</div>
+						<div class="color-box">
+							<div class="color-img" style="background-color: pink;"></div>
+							<p>Pink [3]</p>
+						</div>
+						<div class="color-box">
+							<div class="color-img" style="background-color: cornsilk;"></div>
+							<p>Beigie [11]</p>
+						</div>
+						<div class="color-box">
+							<div class="color-img" style="background-color: brown;"></div>
+							<p>Brown [12]</p>
+						</div>
+						<div class="color-box">
+							<div class="color-img" style="background-color: gray;"></div>
+							<p>Gray [15]</p>
+						</div>
+						<div class="color-box">
+							<div class="color-img" style="background-color: blue;"></div>
+							<p>Blue [11]</p>
+						</div>
+						<div class="color-box">
+							<div class="color-img" style="background-color: green;"></div>
+							<p>Green [5]</p>
+						</div>
+						<div class="color-box">
+							<div class="color-img" style="background-color: purple;"></div>
+							<p>Purpule [3]</p>
+						</div>
+					</div>
+				</div>
+				
+				
+				<div>
+					<div class="tool-bar-items">
+						<p>Style</p>
+						<i class="fa fa-angle-down desc-icons" style="font-size:24px; color:black;"></i>
+					</div>
+					<div class="shoe-style-dropdown">
+						<span class="cancel-drop">x</span>
+						<label class="container">
+						  <input type="checkbox" />
+						 <span class="shoe-style"> High</span>
+						 <span class="shoe-style-count">[35]</span>
+						</label>
+						<label class="container">
+						  <input type="checkbox">
+						  <span class="shoe-style">Low</span>
+						 <span class="shoe-style-count">[25]</span>
+						</label>
+					</div>
+				</div>
+				
+				
+			</div>
+			<div class="menu-two">
+				<div>
+					<div class="tool-bar-items-2">
+					 	<h4>SORT BY</h4>
+						<i class="fa fa-angle-down desc-icons" style="font-size:24px; color:black;"></i>
+					</div>
+					<div>
+						
+				 </div>
+				</div>
+				
+				
+			</div>
+			
+		</div>
+		<hr>
 		
-		ss
+	</section>
+	
+	<section class="display-shoes-section">
+		<h2>100 RESULTS FOR 'ALL SHOES'</h2>
 		
-		<section  class="section section4">
-			<h1>BECOME A MEMBER & GET 30% OFF</h1>
-			<a><button>SIGN UP FOR FREE  <span style='font-size:27px;'>&#10230</span></button></a>
+		<section class="section3">
+					<div class="suggested-shoes"> 
+							 <div th:each="shoe : ${shoes}" class="container-featured-shoes-items">
+								 <a th:href="@{/home/selectedShoe}" id="anchorSugest">
+		                         <img th:src="${shoe.pictureURL}" width="100%" height="100%">
+		                         </a>
+		                         <p class="price" th:text="${'C$ ' + shoe.price}"></p>
+		                         <img class="heart">
+		                         <div class="shoe-desc" th:id="${shoe.shoeName}">
+									 <h6 class="name" th:text="${shoe.shoeName}"></h6>
+			                         <p class="describe">Men's Shoe</p>
+			                         <p class="describe">3 Colors</p>
+								 </div>
+		                      </div> 
+					</div>
 		</section>
-		<footer th:include="fragments/general.html :: footer"></footer>	
-	</div>
+		
+		
+	</section>
+		
+		
+		
+		
+		
+	
+	
+	<footer th:include="fragments/general.html :: footer"></footer>	
+	
 	<script th:src="@{/Script/dropdown.js}"></script>
 	<script th:src="@{/Script/favourite.js}"></script>
 	<script th:src="@{/Script/search.js}"></script>

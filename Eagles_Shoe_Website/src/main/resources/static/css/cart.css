@@ -8,6 +8,7 @@
     align-items: center;
     position: relative;
 }
+body{ font-family: 'Poppins', sans-serif;}
 
 .cart-status {
     display: flex;

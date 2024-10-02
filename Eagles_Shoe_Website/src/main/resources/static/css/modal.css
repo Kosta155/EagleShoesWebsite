@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
 }
-
+body{ font-family: 'Poppins', sans-serif;}
 .adresses {
     display: grid;
     gap: 8px;

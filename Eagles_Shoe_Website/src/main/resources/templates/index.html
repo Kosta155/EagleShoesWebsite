@@ -2,14 +2,15 @@
 <html xmnls:th="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Eagles.com</title>
+<link rel="icon" type="image/x-icon" th:href="@{/images/logo.png}">
 <link rel="stylesheet" th:href="@{/css/index.css}">
 <link rel="stylesheet" th:href="@{/css/general.css}">
 <link rel="stylesheet" th:href="@{/css/index.css}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body onload="loadData()">
 	
@@ -110,7 +111,7 @@
 			<div class="section3-items section3-item1">
 				<img th:src="@{https://img.buzzfeed.com/buzzfeed-static/static/2023-10/10/16/asset/f29918dace8e/sub-buzz-5423-1696953653-1.jpg}"  width="100%" height="100%">
 				<h1>EXCLUSIVE DEALS</h1>
-				<a >
+				<a th:href="@{/home/generalViewPageShoe}" >
 					<button>Shop Exclusively<span style='font-size:27px;'>&#10230</span></button>
 				</a>
 			</div>
