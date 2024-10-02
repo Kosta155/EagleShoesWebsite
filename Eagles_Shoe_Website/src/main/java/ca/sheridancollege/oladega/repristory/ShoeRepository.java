@@ -24,8 +24,12 @@ public class ShoeRepository {
 	public List<Shoe> getAllAvailableShoes()
 	{	
 		MapSqlParameterSource parameters = new MapSqlParameterSource();
-		String query = "SELECT  shoeName, pictureUrl,  price, MIN(shoeID) as shoeID FROM Shoes "
-				+ " WHERE orderid=1 GROUP BY shoeName, price,pictureUrl";
+		String query = "SELECT s.shoeName, p.pictureURL, s.price, MIN(s.shoeID) as shoeID " +
+	               "FROM Shoes s " +
+	               "JOIN Picture p ON s.shoeID = p.shoeID " +
+	               "JOIN Quantity q ON s.shoeID = q.shoeID " +
+	               "GROUP BY s.shoeName, s.price, p.pictureURL " +
+	               "HAVING SUM(q.size) > 0";
 		List<Shoe> shoes =  jdbc.query(query, parameters, new BeanPropertyRowMapper<>(Shoe.class));
 
 		if(shoes.size()>0)
@@ -40,9 +44,19 @@ public class ShoeRepository {
 	public List<Shoe> getFavoritesByUserId(String email)
 	{	
 		MapSqlParameterSource parameters = new MapSqlParameterSource();
-		String query = "SELECT Distinct shoeName,price,pictureUrl, MIN(shoeId) as shoeId from shoes where shoeName in "
-				+ "(Select shoename from shoes s join favorites f on "
-				+ "s.shoeId=f.shoeId where f.email=:email) group by shoeName,price,pictureUrl ";
+		String query = "SELECT s.shoeName, p.pictureURL, s.price, MIN(s.shoeID) as shoeID "
+	             + "FROM Shoes s "
+	             + "JOIN Picture p ON s.shoeID = p.shoeID "
+	             + "JOIN Quantity q ON s.shoeID = q.shoeID "
+	             + "WHERE s.shoeName IN ("
+	             + "    SELECT s2.shoeName "
+	             + "    FROM Shoes s2 "
+	             + "    JOIN Favorites f ON s2.shoeID = f.shoeID "
+	             + "    WHERE f.email = :email "
+	             + ") "
+	             + "GROUP BY s.shoeName, s.price, p.pictureURL "
+	             + "HAVING SUM(q.size) > 0;";
+
 		parameters.addValue("email", email);
 		List<Shoe> shoes =  jdbc.query(query, parameters, new BeanPropertyRowMapper<>(Shoe.class));
 

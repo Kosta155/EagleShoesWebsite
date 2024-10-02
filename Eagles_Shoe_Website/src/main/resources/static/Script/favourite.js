@@ -43,7 +43,7 @@ elements2.forEach(element => {
             element.style.color = "black";
         }
          const shoeId = parseInt(element.id);
-         const pictureUrl = element.previousElementSibling.src;
+         const pictureUrl = element.previousElementSibling.id;
          const price = element.nextElementSibling.innerHTML.slice(3);
          const shoeName = element.nextElementSibling.nextElementSibling.nextElementSibling.id;
          

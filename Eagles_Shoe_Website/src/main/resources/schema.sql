@@ -18,6 +18,19 @@ CREATE TABLE address(
   CONSTRAINT mambers_FK1 FOREIGN KEY (email) REFERENCES members (email)
 );
 
+CREATE TABLE Shoes (
+  shoeId int NOT NULL AUTO_INCREMENT,
+  shoeName varchar(50) NOT NULL,
+  shoeBrand varchar(50) NOT NULL,
+  shoeType varchar(50) NOT NULL,
+  gender varchar(50) NOT NULL,
+  shoeStatus varchar(255) NOT NULL,
+  price bigint NOT NULL,
+  shoeDate date NOT NULL,
+  discount bigint DEFAULT NULL,
+  PRIMARY KEY (shoeId)
+);
+
 CREATE TABLE orders (
   orderId bigint NOT NULL AUTO_INCREMENT,
   orderTime datetime NOT NULL,
@@ -28,9 +41,15 @@ CREATE TABLE orders (
   province varchar(40) NOT NULL,
   country varchar(50) NOT NULL,
   postalCode varchar(10) NOT NULL,
-  PRIMARY KEY (orderId),
-  CONSTRAINT oder_FK1 FOREIGN KEY (email) REFERENCES members (email)
-   
+  PRIMARY KEY (orderId)
+);
+
+Create Table orderShoe(
+    orderId bigint NOT NULL,
+    shoeId int NOT NULL,
+    PRIMARY KEY (orderId, shoeId),
+    CONSTRAINT quantity_OS1 FOREIGN KEY (orderId) REFERENCES Orders (orderId),
+    CONSTRAINT quantity_OS2 FOREIGN KEY (shoeId) REFERENCES Shoes (shoeId)
 );
 
 CREATE TABLE sec_role (
@@ -40,25 +59,37 @@ CREATE TABLE sec_role (
 );
 
 
+CREATE TABLE Color(
+colorName varchar(50) NOT NULL,
+PRIMARY KEY (colorName)
+);
 
-CREATE TABLE Shoes (
-  shoeId int NOT NULL AUTO_INCREMENT,
-  shoeName varchar(50) NOT NULL,
-  shoeBrand varchar(50) NOT NULL,
-  shoeType varchar(50) NOT NULL,
-  gender varchar(50) NOT NULL,
-  price bigint NOT NULL,
-  shoeDate date NOT NULL,
-  discount bigint DEFAULT NULL,
-  color varchar(15) NOT NULL,
-  size bigint NOT NULL,
-  orderId bigint NOT NULL,
-  pictureURL varchar(300),
-  picture2URL varchar(300),
-  picture3URL varchar(300),
-  picture4URL varchar(300),
-  PRIMARY KEY (shoeId),
-  CONSTRAINT shoes_FK1 FOREIGN KEY (orderId) REFERENCES orders (orderId)
+CREATE TABLE Size(
+size double NOT NULL,
+PRIMARY KEY (size)
+);
+
+CREATE TABLE Quantity(
+    colorName varchar(50) NOT NULL,
+    size double NOT NULL,
+    shoeId int NOT NULL,
+    PRIMARY KEY (colorName, size, shoeId),
+    CONSTRAINT quantity_FK1 FOREIGN KEY (colorName) REFERENCES Color (colorName),
+    CONSTRAINT quantity_FK2 FOREIGN KEY (size) REFERENCES Size (size),
+    CONSTRAINT quantity_FK3 FOREIGN KEY (shoeId) REFERENCES Shoes (shoeId)
+);
+
+
+CREATE TABLE Picture(
+    pictureURL varchar(300),
+  	picture2URL varchar(300),
+  	picture3URL varchar(300),
+ 	picture4URL varchar(300),
+    colorName varchar(50) NOT NULL,
+    shoeId int NOT NULL,
+    PRIMARY KEY (colorName, shoeId),
+    CONSTRAINT picture_FK1 FOREIGN KEY (colorName) REFERENCES Color (colorName),
+    CONSTRAINT picture_FK2 FOREIGN KEY (shoeId) REFERENCES Shoes (shoeId)
 );
 
 CREATE TABLE user_role (
@@ -74,7 +105,7 @@ CREATE TABLE favorites (
   favoriteId int NOT NULL AUTO_INCREMENT,
   email varchar(100) NOT NULL,
   shoeId int NOT NULL,
-  PRIMARY KEY (favoriteId),
+   PRIMARY KEY (favoriteId),
   CONSTRAINT fav_FK1 FOREIGN KEY (shoeId) REFERENCES shoes (shoeId),
   CONSTRAINT fav_FK2 FOREIGN KEY (email) REFERENCES members (email)
 );

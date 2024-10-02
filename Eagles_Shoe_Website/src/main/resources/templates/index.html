@@ -87,7 +87,7 @@
 					<div class="container-featured-shoes">
 					 
 						<div th:each="shoe : ${shoes}" class="container-featured-shoes-items">
-						 <a th:href="@{/home/selectedShoe}" id="demo">
+						 <a th:href="@{/home/selectedShoe}" th:id="${shoe.pictureURL}">
                          <img th:src="${shoe.pictureURL}" width="100%" height="100%">
                          </a>	
                          <i th:id="${shoe.shoeId}" class="fa fa-heart favourite" style='font-size:35px;'></i>
