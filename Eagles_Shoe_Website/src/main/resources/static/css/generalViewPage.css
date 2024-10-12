@@ -1,0 +1,266 @@
+@charset "ISO-8859-1";
+.Search-result{
+		display:flex;
+		padding:25px 40px;
+		font-size:18px;
+		gap:4px;
+	    width:20%;
+	   
+		margin:0px 10% ;
+		
+		
+	}
+	
+	
+	.main-tool-bar
+	{
+		display: grid;
+		grid-template-columns: 60% 10%;
+		justify-content: space-around;
+	}
+	.tool-bar
+	{
+		display: flex;
+		gap:10px;
+		padding:25px;
+	}
+	.tool-bar-items,.tool-bar-items-2 
+	{
+		display: flex;
+		
+		border:1px solid silver;
+		justify-content: center;
+		align-items: center;
+		padding:0px 10px;
+		
+	}
+	.tool-bar-items{
+		color:black;
+		font-weight: bold;
+		font-size: 18px;
+	}
+	.fa-angle-down,.fa-angle-up
+	{
+		padding-top:13px;
+	}
+	.fa-angle-down:hover, .fa-angle-up:hover,.fa-sliders:hover
+	{
+		background-color: white;
+		border:none;
+		border-radius: 0px;
+		
+		
+	}
+	.fa-sliders{background-color: white; color:black; font-size:30px;}
+	hr{
+		color: 0.2px solid silver;
+	}
+	.menu-two
+	{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		
+		
+		
+	}
+	
+	.display-shoes-section{
+		border:2px olid green;
+		padding:2% 12%;
+		
+	}
+	.section3
+	{width:100%; height:100%;display: grid; justify-content: space-around;margin:6rem 0px;}
+	
+	.suggested-shoes 
+	{
+	 display: grid;
+	  grid-template-columns: repeat(4,1fr);
+	  color:black;
+	  width:105%;
+	  row-gap:100px;
+	  column-gap: 20px;
+	
+	}
+	
+	.container-featured-shoes-items{
+	border:1px solid silver;
+	height:500px;
+	
+	position: relative;
+	
+}
+
+.container-featured-shoes-items:hover {
+    border: 1px solid black;
+}
+
+.price{
+	position: absolute;
+	font-size: 18px;
+	bottom: 0px;
+	left:0px;
+	font-weight: bold;
+	background-color: black;
+	color: white;
+	padding:5px;
+}
+.name{
+	
+	font-size:18px;
+}
+.filter-details{
+	display:flex;
+	border:2px solid green;
+	position: relative;
+	width:200px;
+    gap:20px;
+}
+
+.filter-details-dropdown
+{
+	border:1px solid black;
+	
+}
+label{display:block;}
+input[type=checkbox]{
+	appearance: none;
+	width:30px;
+	height:28px;
+	background-color: white;
+	border-radius: 4px;
+	border:1px solid silver;
+	display:inline-block;
+	vertical-align: middle;
+	position: relative;
+	transition: 0.5s all ease-in-out;
+	padding:1px 5px;
+}
+input[type=checkbox]:checked,input[type=radio]:checked
+{
+	background-color: black;
+}
+
+input[type=checkbox]::before
+{
+	content:'\2713';
+	font-size: 20px;
+	font-weight: bold;
+}
+
+
+input[type=radio]{
+	appearance: none;
+	width:28px;
+	height:29px;
+	background-color: white;
+	border:1px solid silver;
+	border-radius: 50%;
+	vertical-align: middle;
+	transition: 0.5s all ease-in-out;
+}
+
+
+
+.gender-dropdown ,
+ .price-dropdown,
+ .category-dropdown,
+ .size-dropdown,
+ .color-dropdown,
+ .shoe-style-dropdown{
+	border:1px solid silver;
+	width:300px;
+	background-color: white;
+	position: absolute;
+	height:200px;
+	margin-top:6px;
+	display:grid;
+	padding:20px 20px;
+	gap:5px;
+	align-items: space-around;
+	z-index: 1;
+	 animation-name: fadeInSlideDown2;
+     animation-duration: 0.5s;
+    animation-timing-function: ease-out;
+}
+@keyframes fadeInSlideDown2 {
+    0% {
+        opacity: 0;
+        color:silver;
+        transform: translateY(-5px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.shoe-style-dropdown{
+	display:grid;
+	height:max-content;
+}
+
+
+
+.size-dropdown{
+	display:grid;
+	grid-template-columns: repeat(6, auto);
+	width: max-content;
+	padding-top: 35px;
+	
+}
+.color-dropdown{
+	display:grid;
+	grid-template-columns: repeat(4, auto);
+	width: max-content;
+	justify-content: center;
+	padding: 35px 20px;
+	height:max-content ;
+	gap:20px;
+}
+
+.cancel-drop{
+	position: absolute;
+	right:10px;
+	top:5px;
+	border:1px solid black;
+	border-radius: 50%;
+	padding:3px 7px;
+	margin-left:12px;
+	
+}
+.cancel-drop:hover
+{
+	border:1px solid silver;
+	color:silver;
+	
+	
+}
+.hidden-dropdown{
+	display:none;
+}
+.size-numbers{
+	border:2px solid silver;
+	text-align: center;
+	vertical-align:middle;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width:70px;
+}
+.size-numbers:hover{
+	border:2px solid black;
+}
+.color-box{
+	display: grid;
+	gap:5px;
+}
+.color-img{
+	border: 2px solid silver;
+	border-radius: 50%;
+	width: 28px;
+	height:28px;
+	justify-self:center;
+}
+.dropdown-hidden{display: none;}

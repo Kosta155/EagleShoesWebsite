@@ -62,12 +62,15 @@ let currentImage = 0;
     control.forEach((element,index) =>{	
 	 element.addEventListener("click", function ()
 	 {
-		 
+		
 		 if(dropdown[index].classList.contains("dropdown-hidden"))
 		 {
+			
 			 dropdown[index].classList.remove("dropdown-hidden");
 		     icon[index].classList.remove("fa-angle-down");
 		     icon[index].classList.add("fa-angle-up");
+		     
+		     
 		 }
 		 else
 		 {

@@ -14,6 +14,9 @@
 
 
 </head>
+<style>
+	.example{display: none;}
+</style>
 <body>
 	
 	<div class="main-container">
@@ -48,12 +51,12 @@
 					<h2>Contact Information</h2>
 					<p th:text="${user.username}"></p>
 					<p th:if="${address}" th:text="${address.postalCode}"></p>
-					<a>Edit</a>
+					<a class="example">Edit</a>
+					<a >Save</a>
 				</div>
 				<div class="item email-info">
 					<h2>Email</h2>
 					<p th:text="${user.email}"></p>
-					<a>Edit</a>
 				</div>
 				<div class="item password-info">
 					<h2>Password</h2>

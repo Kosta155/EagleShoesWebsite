@@ -95,6 +95,18 @@ public class Shoe_Controller {
 		shoeRepo.addAddress(address);
 		return "redirect:/home/addressPage";
 	}
+	
+	@GetMapping("/home/getFormAddressPage")
+	public String getFormAddressPagee()
+	{
+		return "formAddress.html";
+	}
+	@GetMapping("/home/getEditAddressPage/{id}")
+	public String getEditAddressPage()
+	{
+		return "EditAddress.html";
+	}
+	
 	@GetMapping("/home/orderHistory")
 	public String getOrderHistoryPage(Model model)
 	{

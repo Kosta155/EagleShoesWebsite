@@ -43,54 +43,23 @@
         <div class="section-item2">
             <h1>Addresses</h1>
             <div class="item" >
-                <h3 id="add">&#43;<a>Add new address</a></h3>
+                <h3 class="linklight"> &#43;<a th:href="@{/home/getFormAddressPage}" > Add new address</a></h3>
             </div>
             <div th:each="address : ${addresses}"  class="item adresses">
                 <h3 th:text="${address.email}" ></h3>
                 <p th:text="${address.street} + ', ' + ${address.city} + ', ' +  ${address.province} + ', ' + ${address.postalCode}"></p>
                 <div>
-                    <a>Edit</a> | <a th:href="@{/deleteAddress/{id}(id=${address.addressId})}">Remove</a>
+                    <a>Edit</a> | <a th:href="@{/deleteAddress/{id}(id=${address.addressId})}" id="remove">Remove</a>
                 </div>
             </div>
            
         </div>
     </section>
-    
-    <div class="hidden modal">
-        <form action="/submitAddress" method="post">
-			<div class="form-header">
-				<h2>Enter new address</h2>
-				<span class="cancel">&#10006;</span>
-			</div>
-			<label>Street Address* :</label>
-           <input type="text" name="streetaddress" id="streetaddress" required>
-            <label>APT/ Unit No :</label>
-           <input type="text" name="unitno" id="unitno" required>
-           <label>City* :</label>
-           <input type="text" name="city" id="city" required>
-           <label>Province* :</label>
-           <input type="text" name="province" id="province" required>
-           <label>Postal code* :</label>
-           <input type="text" name="postalcode" id="postcode" required>
-           <label>Country* :</label>
-           <select>
-			   <option>Select your country</option>
-			   <option>Canada</option>
-		   </select>
-		   <br>
-		   <div class="form-button">
-			    <input type="submit" value="SAVE ADDRESS" class="item-btn">
-			     <input type="button" value="CANCEL" class="item-btn cancel cancel1">
-		   </div>
-		  
-        </form>
-    </div>
-    <div class="overlay hidden cancel"></div>
     <footer th:include="fragments/general.html :: footer"></footer>
 </div>
 <script th:src="@{/Script/dropdown.js}"></script>
 
-<script th:src="@{/Script/modal.js}"></script>
+
 <script th:src="@{/Script/search.js}"></script>
 
 

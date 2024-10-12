@@ -12,130 +12,14 @@ body{ font-family: 'Poppins', sans-serif;}
 .item {
     margin-left: 5%;
 }
-
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(1px);
-    z-index: 5;
+.linklight a{
+	color:black;
 }
+.linklight a:hover{
+	    color:  green;
 
-.modal {
-    position: absolute;
-    top: 12px;
-    left: 50%;
-    transform: translate(-50%, 25%);
-    z-index: 10;
-    font-family: 'Poppins', sans-serif;
-    display: grid;
-    justify-content: center;
-    height: 50%;
-    width: 500px; /* Ensure width is defined */
-    font-size: 24px;
-    background-color: white; 
-    box-shadow: 0 3rem 15rem white;
-    animation-name: modal-box-grow;
-    animation-duration: 3s;
-    animation-timing-function: ease-out;
 }
-
-/* Animation Keyframes */
-@keyframes modal-box-grow {
-    0% {
-        transform: translate(-50%, 25%) scale(0);
-        opacity: 0;
-    }
-    100% {
-        transform: translate(-50%, 25%) scale(1);
-        opacity: 1;
-    }
+#remove:hover{
+	color:red;
 }
-
-.form-header {
-    display: flex;
-    background-color: black;
-    color: white;
-    padding: 13px;
-    align-items: center;
-    margin-bottom: 30px;
-}
-
-.hidden {
-    display: none;
-}
-
-.form-header h2 {
-    font-size: 20px;
-}
-
-.form-header span {
-    font-size: 30px;
-    position: absolute;
-    right: 0px;
-    width: 45px;
-    padding: 4px;
-    text-align: center;
-}
-
-.form-header span:hover {
-    border: 1px solid #848484; 
-    background-color: #333333;
-}
-
-form {
-    width: 500px;
-    background-color: white;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 15px;
-}
-
-label {
-    padding-left: 20px;
-}
-
-form input[type="text"], input[type="number"], select {
-    height: 30px;
-    padding-left: 20px;
-    background-color: white;
-    border: 2px solid black;
-    display: block;
-    width: 90%;
-    margin: 8px 30px;
-    border-radius: 0%;
-    height: 30px;
-    font-size: 15px;
-    color: black;
-}
-
-.form-button {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-}
-
-.item-btn {
-    border: 2px solid black;
-    background-color: black;
-    color: white;
-    border-radius: 0%;
-    font-size: 15px;
-    height: 30px;
-    width: 90%;
-    text-align: center;
-    font-weight: bold;
-}
-
-.item-btn:hover {
-    border-bottom: 8px solid black;
-    background-color: #23231D;
-    color: silver;
-}
-
-.cancel1 {
-    margin-bottom: 30px;
-}
+#remove{color:black}

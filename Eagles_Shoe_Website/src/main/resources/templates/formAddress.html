@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta charset="ISO-8859-1">
+    <title>Eagles.com</title>
+    <link rel="icon" type="image/x-icon" th:href="@{/images/logo.png}">
+   
+    <link rel="stylesheet" th:href="@{/css/general.css}">
+    
+   
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<style>
+	label{
+		font-size: 20px;
+		font-weight: bold;
+	}
+	form input[type=text]{
+		background-color: transparent;
+		border:1px solid black;
+		border-radius: 0px;
+		padding:20px 10px;
+		font-size: 17px;
+	}
+	
+	form{
+		padding:50px 30px;
+		
+		height:30rem;
+		align-items: center;
+	}
+	#streetaddress{
+		width:500px;
+	}
+	.first-row{
+		display:block;
+	}
+	
+	.third-row input{
+		height: 60px;
+    width: 300px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 0px;
+    box-shadow: 0px 5px 3px silver;
+    display: flex;
+    font-size: 17px;
+    
+    
+    align-items: center;
+    justify-content: center;
+	}
+	.third-row input:hover{
+		    box-shadow: 0 3px 3px greenyellow;
+		     background-color: #333333;
+	}
+	.rows{
+		display: flex;
+		justify-content: center;
+		gap:20px;
+		margin:25px;
+		
+	}
+	select{
+		padding:11px 15px;
+		font-size: 20px;
+	}
+</style>
+<body>
+ <header th:include="fragments/general.html :: header"></header>
+    
+        <form action="/submitAddress" method="post">
+		
+		 <div class="first-row rows">
+			  <label>Street Address* :
+	           	<input type="text" name="streetaddress" id="streetaddress" required>
+	           </label>
+	            <label>APT/ Unit No :
+	           <input type="text" name="unitno" id="unitno" style="width:50px">
+	           </label>
+	           <label>City* :
+	           <input type="text" name="city" id="city" required>
+	           </label>
+            </div>
+            <div class="second-row rows">
+	           <label>Province* :
+	           <input type="text" name="province" id="province" required>
+	           </label>
+	           
+	           <label>Postal code* :
+	           <input type="text" name="postalcode" id="postcode" required>
+	           </label>
+	           <label>Country* :
+	           <select>
+				   <option>Select your country</option>
+				   <option>Canada</option>
+				    <option>US</option>
+			   </select>
+			   </label>
+		   </div>
+		   
+		   <div class="third-row rows">
+			    <input type="submit" value="SAVE ADDRESS &#10230" class="item-btn">
+		   </div>
+		  
+        </form>
+    </div>
+ 
+    <footer th:include="fragments/general.html :: footer"></footer>
+</div>
+<script th:src="@{/Script/dropdown.js}"></script>
+
+<script th:src="@{/Script/modal.js}"></script>
+<script th:src="@{/Script/search.js}"></script>
+
+
+</body>
+</html>
